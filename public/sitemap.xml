@@ -2,14 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://sciviscontest2023.github.io/</loc>
-    <lastmod>2022-10-05T14:07:57+02:00</lastmod>
+    <loc>https://sciviscontest2023.github.io/submission/</loc>
+    <lastmod>2019-11-28T15:14:39+10:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/data/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/past/</loc>
+    <lastmod>2018-11-28T15:14:39+10:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/data/install-hugo/</loc>
+    <lastmod>2019-02-11T19:27:37+10:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/past/install-hugo/</loc>
+    <lastmod>2019-02-11T19:27:37+10:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/data/install-theme/</loc>
+    <lastmod>2019-02-11T19:27:37+10:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/past/install-theme/</loc>
+    <lastmod>2019-02-11T19:27:37+10:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/data/configure/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/past/configure/</loc>
+    <lastmod>2019-02-11T19:30:08+10:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/data/specimen/</loc>
+    <lastmod>2019-02-11T19:27:37+10:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/past/specimen/</loc>
+    <lastmod>2019-02-11T19:27:37+10:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/data/example/</loc>
+    <lastmod>2019-02-11T19:27:37+10:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/past/example/</loc>
+    <lastmod>2019-02-11T19:27:37+10:00</lastmod>
   </url><url>
     <loc>https://sciviscontest2023.github.io/posts/my-first-post/</loc>
     <lastmod>2022-10-05T14:07:57+02:00</lastmod>
   </url><url>
     <loc>https://sciviscontest2023.github.io/posts/</loc>
     <lastmod>2022-10-05T14:07:57+02:00</lastmod>
+  </url><url>
+    <loc>https://sciviscontest2023.github.io/</loc>
+    <lastmod>2022-10-05T17:32:39+10:00</lastmod>
   </url><url>
     <loc>https://sciviscontest2023.github.io/categories/</loc>
   </url><url>
