@@ -1,4 +1,4 @@
-baseURL = 'https://sciviscontest2023.github.io/'
+baseURL = 'https://sciviscontest2023.github.io/docs/'
 languageCode = 'en-us'
 title = 'IEEE SciVis Contest 2023'
 theme = "hugo-whisper-theme"
