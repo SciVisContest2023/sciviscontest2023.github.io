@@ -4,10 +4,13 @@
 
 {{ define "main" }}
 
-<span class="overview">Overview</span>
+<!--<span class="overview">Overview</span> -->
 <h1 class="title">{{ .Title }}</h1>
 <div class="content">
-  {{ .Content }}
+  {{ $content := .Content }}
+  {{ $content = replaceRE `<a href="(https?://.+)">` `<a href="$1" target="_blank">` $content | safeHTML }}
+  {{ $content = replaceRE `<a href="(mailto:.+)">` `<a href="$1" target="_blank">` $content | safeHTML }}
+  {{ $content | safeHTML }}
 </div>
 
 {{ range.Pages }}

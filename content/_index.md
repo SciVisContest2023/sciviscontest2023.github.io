@@ -5,13 +5,6 @@ date: 2022-10-05T17:32:39+10:00
 
 Connections within the brain. Great!
 
---------------------
+###### Video from IEEE VIS 2022 here:
 
-### Data Description Video here:
-
-
-
-# Overview
-
-##### Taks
-
+These pages will be filled with further information.

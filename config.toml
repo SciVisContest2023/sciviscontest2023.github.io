@@ -38,7 +38,7 @@ summaryLength = 30
 
 [[menu.main]]
     name = "Past SciVis Contests"
-    url = "/past/"
+    url = "/past-submissions/"
     weight = 5
 
 [params]
@@ -46,8 +46,8 @@ summaryLength = 30
   homepage_button_link = '/data'
   homepage_button_text = 'Download the Data'
   homepage_intro = 'This is a test'
-  homepage_image = '/images/terminal.gif'
-  mainSections = ["data", "submission", "past"]
+  # homepage_image = '/images/terminal.gif'
+  mainSections = ["data", "submission", "past-submissions"]
 
   ## You can enable to add anchor links to header elements
   # enable_anchor_link = true

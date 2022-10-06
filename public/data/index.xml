@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Overview on IEEE SciVis Contest 2023</title>
+    <title>Data Overview on IEEE SciVis Contest 2023</title>
     <link>https://sciviscontest2023.github.io/data/</link>
-    <description>Recent content in Overview on IEEE SciVis Contest 2023</description>
+    <description>Recent content in Data Overview on IEEE SciVis Contest 2023</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="https://sciviscontest2023.github.io/data/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
       
       <guid>https://sciviscontest2023.github.io/data/data-description/</guid>
-      <description>Syntax highlighting and menus can be configured via &lt;code&gt;config.toml&lt;/code&gt;.</description>
+      <description>Here we provide a tldr description of the data. More information can be found in the subsection.</description>
     </item>
     
     <item>
