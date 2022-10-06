@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Overview - IEEE SciVis Contest 2023</title>
+  <title>Data Description - IEEE SciVis Contest 2023</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <link rel="icon" href="https://sciviscontest2023.github.io/favicon.png">
@@ -18,7 +18,7 @@
 
 </head>
 
-<body class='page page-default-list'>
+<body class='page page-default-single'>
   <div id="main-menu-mobile" class="main-menu-mobile">
   <ul>
     
@@ -128,8 +128,16 @@
           <div class="sidebar">
             
 <div class="docs-menu">
-  <h4>Submission</h4>
+  <h4>Data</h4>
   <ul>
+    
+    <li class="active ">
+      <a href="https://sciviscontest2023.github.io/data/data-description/">Data Description</a>
+    </li>
+    
+    <li class="">
+      <a href="https://sciviscontest2023.github.io/data/data-location/">Hugo Whisper</a>
+    </li>
     
   </ul>
 </div>
@@ -138,17 +146,26 @@
         </div>
         <div class="col-12 col-md-9">
           
-
-<span class="overview">Overview</span>
-<h1 class="title">Overview</h1>
-<div class="content">
-  <h2 id="whisper-theme">Whisper Theme</h2>
-<p>Whisper is a minimal documentation theme for Hugo. The design and functionality is intentionally minimal. We’re aiming for a similar feel to a Github readme.</p>
-
+<h1 class="title">Data Description</h1>
+<div class="content ">
+  <h2 id="syntax-highlighting">Syntax Highlighting</h2>
+<p>Whisper uses the in-built code highlighting that ships with hugo. <a href="https://gohugo.io/content-management/syntax-highlighting/">https://gohugo.io/content-management/syntax-highlighting/</a></p>
+<p>You can insert code snippets in any markdown file by using standard code fences syntax ie:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">```
+</span></span><span class="line"><span class="cl">insert code here
+</span></span><span class="line"><span class="cl">```
+</span></span></code></pre></div><p>You can specify the langauge by adding a declaration after the backticks</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">```javascript
+</span></span><span class="line"><span class="cl">insert code here
+</span></span><span class="line"><span class="cl">```
+</span></span></code></pre></div><h3 id="pygments-options">Pygments Options</h3>
+<p>The following code highlighting options are configured in the <code>config.toml</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">pygmentsCodeFences</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">pygmentsCodefencesGuessSyntax</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">pygmentsUseClasses</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span></code></pre></div>
 </div>
-
-
-
+</div>
 
         </div>
       </div>

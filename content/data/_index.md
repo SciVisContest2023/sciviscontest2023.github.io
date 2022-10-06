@@ -4,6 +4,6 @@ date: 2018-11-28T15:14:39+10:00
 weight: 1
 ---
 
-## Whisper Theme
+## Data
 
-Whisper is a minimal documentation theme for Hugo. The design and functionality is intentionally minimal. We’re aiming for a similar feel to a Github readme.
+This year's data represents neronal activity within the human brain.

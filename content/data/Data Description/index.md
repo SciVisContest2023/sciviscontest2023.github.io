@@ -1,5 +1,5 @@
 ---
-title: 'Configuration'
+title: 'Data Description'
 date: 2019-02-11T19:30:08+10:00
 draft: false
 weight: 4
@@ -34,20 +34,4 @@ The following code highlighting options are configured in the `config.toml`
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
-```
-
-## Main menu
-
-Configure the main menu by editing the `config.toml`
-
-```toml
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
-
-[[menu.main]]
-name = "Docs"
-url = "/docs/"
-weight = 2
 ```

@@ -1,4 +1,4 @@
-baseURL = 'https://sciviscontest2023.github.io/docs/'
+baseURL = 'https://sciviscontest2023.github.io/'
 languageCode = 'en-us'
 title = 'IEEE SciVis Contest 2023'
 theme = "hugo-whisper-theme"
@@ -33,7 +33,7 @@ summaryLength = 30
 
 [[menu.main]]
     name = "Google Group"
-    url = "https://groups.google.com/g/scivis2022"
+    url = "https://groups.google.com/g/scivis2023"
     weight = 4
 
 [[menu.main]]
