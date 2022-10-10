@@ -64,5 +64,7 @@ summaryLength = 30
     meta_twitter_creator = "@ieeevis"
 
   [params.logo]
-      mobile = "/images/logo-mobile.svg"
-      standard  = "/images/logo.svg"
+      # mobile = "/images/logo-mobile.svg"
+      # standard  = "/images/logo.svg"
+      mobile = "/images/brain.png"
+      standard  = "/images/brain.png"
