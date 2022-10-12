@@ -1,10 +1,20 @@
 ---
-title: 'Hugo Whisper'
+title: 'Visualization Tasks'
 date: 2019-02-11T19:27:37+10:00
 weight: 6
 ---
 
-Whisper is a minimal documentation theme built for Hugo. The design &amp; functionality is intentionally minimal.
+Please work on these tasks:
+
+1. 1. DO this
+2. Do that
+3. Another Task
+4. More Tasks
+
+We also give out first, second and third place winner and awasrds for:
+- best network?
+- best timedependent?
+- best something,,,
 
 <!--more-->
 

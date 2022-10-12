@@ -7806,11 +7806,12 @@ p {
 .page-home {
   text-align: center; }
   .page-home .title {
+    text-align: center;
     font-weight: lighter;
     font-family: "Roboto", Arial, sans-serif, -apple-system; }
   .page-home p {
     margin: 0 auto;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: lighter;
     margin-bottom: 40px; }
     @media (min-width: 768px) {
@@ -7818,7 +7819,7 @@ p {
         width: 80%; } }
     @media (min-width: 992px) {
       .page-home p {
-        width: 60%; } }
+        width: 80%; } }
   .page-home .terminal {
     border-radius: 3px;
     margin: 0 auto;
@@ -7826,6 +7827,24 @@ p {
     .page-home .terminal img {
       width: 100%;
       height: auto; }
+
+.video-container {
+  overflow: hidden;
+  position: relative;
+  margin: 0% 15% 0% 15%;
+  width: 70%; }
+
+.video-container::after {
+  padding-top: 56.25%;
+  display: block;
+  content: ''; }
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
 
 body {
   font-family: "Roboto", Arial, sans-serif, -apple-system;

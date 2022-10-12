@@ -1,19 +1,20 @@
 .page-home {
   text-align: center;
   .title {
+    text-align: center;
     font-weight: lighter;
     font-family: $font-family-base;
   }
   p {
     margin: 0 auto;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: lighter;
     margin-bottom: 40px;
     @include media-breakpoint-up(md) {
       width: 80%;
     }
     @include media-breakpoint-up(lg) {
-      width: 60%;
+      width: 80%;
     }
   }
   .terminal {
@@ -25,4 +26,25 @@
       height: auto;
     }
   }
+}
+
+.video-container {
+    overflow: hidden;
+    position: relative;
+    margin: 0% 15% 0% 15%;
+    width: 70%;
+}
+
+.video-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }

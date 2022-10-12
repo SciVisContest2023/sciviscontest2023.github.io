@@ -1,0 +1,7 @@
+<div class="content" style="position: relative; 
+  padding-bottom: 56.25%; 
+  height: 0; 
+  overflow: hidden; 
+  max-width: 100%;">
+  <iframe src="https://www.youtube.com/embed/{{ .Get "id" }}?enablejsapi=1{{ with .Get "color" }}{{ if eq . "white" }}&color=white{{ end }}{{ end }}{{ with .Get "autoplay" }}{{ if eq . "true" }}&autoplay=1{{ end }}{{ end }}{{ if isset .Params "yt_start" }}&start={{ .Get "yt_start" }}{{ end }}{{ if isset .Params "yt_end" }}&end={{ .Get "yt_end" }}{{ end }}{{ with .Get "modestbranding" }}{{ if eq . "true" }}&modestbranding=1{{ end }}{{ end }}"{{ if .Get "class" }} class="{{ .Get "class" }}"{{ end }} allowfullscreen  position = "absolute" top= "0" left= "0" width= "100%" height = "100%"></iframe>
+</div>
