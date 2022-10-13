@@ -13,3 +13,5 @@ Whisper is a minimal documentation theme for Hugo. The design and functionality 
 ###### Requirements
 
 ###### Submission Procedure
+
+###### Judges
