@@ -4,9 +4,17 @@ date: 2019-02-11T19:27:37+10:00
 weight: 2
 ---
 
+The data contains:
+- Number of ensemble members
+- Number of neurons
+- number of connections
+- calcium information
+- simulation statistics
+- ...
+
 The simulation produces a number of text files.
 The data consists of different simulation runs each saved to their own folder.
-
+  
 As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI thread ID, which can be ignored.
 
 Each folder has the same setup explained in the following:
@@ -51,7 +59,10 @@ The following parameters are listed:
 This is a small hacked example of how to read node positions, incoming connections and calcium value and plot the network in Matlab.
 
 The code example below should produce the following outcome:
-![Matlab Plot]()
+
+{{< rawhtml >}}
+<img src="/matlab.png" alt="Matlab Plot" class="matlab">
+{{< /rawhtml >}}
 
 ```Matlab
 % Assuming the correct file locations have been set

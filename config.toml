@@ -48,7 +48,7 @@ summaryLength = 30
 
 [params]
   google_analytics_id=""
-  homepage_button_link = '/data'
+  homepage_button_link = '/data#Download Data'
   homepage_button_text = 'Download the Data'
   homepage_intro = 'This is a test'
   # homepage_image = '/images/terminal.gif'

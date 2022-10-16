@@ -11,7 +11,7 @@
 
   
   
-  <link rel="stylesheet" href="/css/style.min.f36a15bd5eed319cef27a211f8f8fcdc9385ff6d7d0b24cba4bcb7016a7781c9.css">
+  <link rel="stylesheet" href="/css/style.min.1558d52a028ff5be49e3d7ae5de985344bb3adc106be532078fe4ba76ad32cb1.css">
   
 
   
@@ -154,7 +154,7 @@
     </li>
     
     <li class="">
-      <a href="#References">References</a>
+      <a href="#References%20and%20Acknoledgements">References and Acknoledgements</a>
     </li>
     
   </ul>
@@ -171,14 +171,29 @@
   
   
   
-  <p>If you want to skip all the background for now, go and <a href="#Download Data">download the data</a>
-.</p>
-<p>Understanding the human brain is essential</p>
-<p>Quote:
-Currently, we’re looking at the activity of the neurons in real brains.</p>
-<p>Interest:
-changes in the network during stimulation.
-For example, how do the neurons change their dynamics if we insert new ones, delete some (as in “patient had a stroke”), or stimulate a subset (as in “we are learning”)?</p>
+  <p>If you want to skip the background for now, go and <a href="#Download Data">download the data</a>
+ directly.</p>
+<p>This year&rsquo;s contest deals with the simulation of activity within the human brain, especially the changes within its network structure. Current understanding suggests, that a large amount of connections between neurons via synapses is constantly changing, leading to alteration of brain functionality. This includes positive effects such as the creation of memories <a href="#References and Acknoledgements">[ 1 ]</a>
+ or negative ones such as limitations caused by accidents or illnesses <a href="#References and Acknoledgements">[ 2 ]</a>
+.<br>
+To understand these effects on a nueral level, scientists hope to artificially recreate networks that work similar to the human brain with the help of simulation models. The data provided in this contest is based on clinical measurements of actual human brains as well as the <strong>model of Structural Plasticity</strong> by Butz &amp; Van Ooyen <a href="#References and Acknoledgements">[ 2 ]</a>
+ which can be coarsely summarized as follows:</p>
+<p>The brain is modelled by a <strong>network of neurons</strong>.
+Each neuron is either inhibitory or excitatory and is represented by a <strong>node</strong> with a number of properties such as <strong>location</strong>, <strong>calcium concentration</strong>, and <strong>target calcium concentration</strong>.
+It can further carry axonal (&ldquo;plugs&rdquo;) and dendritic (&ldquo;sockets&rdquo;) <strong>elements</strong>.
+If two neurons are spatially close and exhibit unused complementary elements, they have a probability to form a <strong>synapse</strong>, which is represented by a connection in the network through which electric energy can be passed from one neuron to another if it &ldquo;fires&rdquo; based on external input and the Izhikevich model <a href="#References and Acknoledgements">[ 3 ]</a>
+.
+When a neuron fires, its calcium level increases only to decrease again over time.
+In this model, neurons aim to reach a certain target calcium concentration based on its current calcium level. To achieve this, it either seeks to increase or decrease the level of incoming electrical activity resulting in the <strong>addition</strong> or <strong>removal</strong> of elements, which, in turn, leads to the formation, rewiring or deletion of synapses.<br>
+Thus, in each simulation step, each neuron calculates its energy income and calcium level based on this model, followed by the addition or deletion of elements, leading to changes in the network structure. This can be repeated until the system has reached a stable configuration or stopped on demand.</p>
+<p>The following animation shows a simple visualization of the neurons represented as spheres at the appropriate locations and colored by their current calcium level:</p>
+<p><img src="/spheres.webp" alt="Animated Brain"></p>
+<p>On the <a href="/">front page</a>
+ you can also see a visualization containing line renderings of ingoing connections (synapses).</p>
+<p>Visualization can help to understand theses processes (see, e.g., <a href="#References and Acknoledgements">[ 4 ]</a>
+). Therefore, the goal of this contest is to enable domain scientists as well as simulation scientists to better evaluate their models, , and explore the simulation results. 
+Based on this, we have provided a list of visualization <a href="%5ctasks">tasks</a>
+ for this contest.</p>
 
 
 <div style="height:  20px"></div>
@@ -199,7 +214,16 @@ For example, how do the neurons change their dynamics if we insert new ones, del
   
   
   
-  <p>The simulation produces a number of text files.
+  <p>The data contains:</p>
+<ul>
+<li>Number of ensemble members</li>
+<li>Number of neurons</li>
+<li>number of connections</li>
+<li>calcium information</li>
+<li>simulation statistics</li>
+<li>&hellip;</li>
+</ul>
+<p>The simulation produces a number of text files.
 The data consists of different simulation runs each saved to their own folder.</p>
 <p>As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI thread ID, which can be ignored.</p>
 <p>Each folder has the same setup explained in the following:</p>
@@ -286,8 +310,11 @@ Each <strong>row</strong> within the file contains the per node information at a
 </table>
 <h3 id="matlab-example-for-visualizing-nodes-and-connections">Matlab example for visualizing nodes and connections</h3>
 <p>This is a small hacked example of how to read node positions, incoming connections and calcium value and plot the network in Matlab.</p>
-<p>The code example below should produce the following outcome:
-<img src="" alt="Matlab Plot"></p>
+<p>The code example below should produce the following outcome:</p>
+
+
+<img src="/matlab.png" alt="Matlab Plot" class="matlab">
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Matlab" data-lang="Matlab"><span class="line"><span class="cl"><span class="c">% Assuming the correct file locations have been set</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">%%% First we read in nodes and their locations</span>
@@ -370,6 +397,7 @@ Each <strong>row</strong> within the file contains the per node information at a
   
   
   <p>Links will be added within the next days.</p>
+<p>If you use this data set in your publications, please acknowledge with the following: tba</p>
 
 
 <div style="height:  20px"></div>
@@ -386,17 +414,24 @@ Each <strong>row</strong> within the file contains the per node information at a
 
 <div class="summary mb-2">
   
-  <h2 id="References">References</h2>
+  <h2 id="References and Acknoledgements">References and Acknoledgements</h2>
   <div class="content ">
   
   
   
-  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">```
-</span></span><span class="line"><span class="cl">[1] Bibfile here.
-</span></span><span class="line"><span class="cl">[2] Bibfile here.
-</span></span><span class="line"><span class="cl">[1] Bibfile here.
-</span></span><span class="line"><span class="cl">```
-</span></span></code></pre></div>
+  <p>The contest is organized by the <em>Crosssectional Group Visualization</em> and the <em>Crosssectional Group Parallel Performance</em> within the National High Performance Computing Center for Computational Engineering Science (NHR4CES <a href="#References and Acknoledgements">[ 5 ]</a>
+).</p>
+<p>[1] Gallinaro, Júlia V. and Gašparović, Nebojša and Rotter, Stefan (2022): Homeostatic control of synaptic rewiring in recurrent networks induces the formation of stable memory engrams - <a href="http://dx.doi.org/10.1371/journal.pcbi.1009836" target="_blank" target="_blank">Available here</a>
+<br>
+[2] Butz, Markus and van Ooyen, Arjen (2013): A simple rule for dendritic spine and axonal bouton formation can account for cortical reorganization after focal retinal lesions - <a href="https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003259&amp;type=printable" target="_blank" target="_blank">Available here</a>
+<br>
+[3] Izhikevich, Eugene M. (2003): Simple model of spiking neurons - <a href="https://www.izhikevich.org/publications/spikes.pdf" target="_blank" target="_blank">Available here</a>
+<br>
+[4] Nowke, Christian, Sandra Diaz-Pier, Benjamin Weyers, Bernd Hentschel, Abigail Morrison, Torsten W. Kuhlen, and Alexander Peyser (2018): Toward rigorous parameterization of underconstrained neural network models through interactive visualization and steering of connectivity generation <a href="https://www.frontiersin.org/articles/10.3389/fninf.2018.00032/full" target="_blank" target="_blank">Available here</a>
+<br>
+[5] National High Performance Computing Center for Computational Engineering Science (NHR4CES) - <a href="https://www.nhr4ces.de/" target="_blank" target="_blank">Website</a>
+</p>
+
 </div>
 </div>
 

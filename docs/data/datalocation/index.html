@@ -11,7 +11,7 @@
 
   
   
-  <link rel="stylesheet" href="/css/style.min.f36a15bd5eed319cef27a211f8f8fcdc9385ff6d7d0b24cba4bcb7016a7781c9.css">
+  <link rel="stylesheet" href="/css/style.min.1558d52a028ff5be49e3d7ae5de985344bb3adc106be532078fe4ba76ad32cb1.css">
   
 
   
@@ -154,7 +154,7 @@
     </li>
     
     <li class="">
-      <a href="#References">References</a>
+      <a href="#References%20and%20Acknoledgements">References and Acknoledgements</a>
     </li>
     
   </ul>
@@ -169,7 +169,16 @@
   
   
   
-  <p>The simulation produces a number of text files.
+  <p>The data contains:</p>
+<ul>
+<li>Number of ensemble members</li>
+<li>Number of neurons</li>
+<li>number of connections</li>
+<li>calcium information</li>
+<li>simulation statistics</li>
+<li>&hellip;</li>
+</ul>
+<p>The simulation produces a number of text files.
 The data consists of different simulation runs each saved to their own folder.</p>
 <p>As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI thread ID, which can be ignored.</p>
 <p>Each folder has the same setup explained in the following:</p>
@@ -256,8 +265,11 @@ Each <strong>row</strong> within the file contains the per node information at a
 </table>
 <h3 id="matlab-example-for-visualizing-nodes-and-connections">Matlab example for visualizing nodes and connections</h3>
 <p>This is a small hacked example of how to read node positions, incoming connections and calcium value and plot the network in Matlab.</p>
-<p>The code example below should produce the following outcome:
-<img src="" alt="Matlab Plot"></p>
+<p>The code example below should produce the following outcome:</p>
+
+
+<img src="/matlab.png" alt="Matlab Plot" class="matlab">
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Matlab" data-lang="Matlab"><span class="line"><span class="cl"><span class="c">% Assuming the correct file locations have been set</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">%%% First we read in nodes and their locations</span>
