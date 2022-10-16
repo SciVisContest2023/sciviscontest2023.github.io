@@ -2,6 +2,11 @@
   {{ if .Params.image }}
   <img alt="{{ .Title }}" src="{{ .Params.image }}" />
   {{ end}}
-  <h2 class="title-summary"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-  <p>{{ .Summary }}</p>
+  <h2 id="{{ .Title }}">{{ .Title }}</h2>
+  <div class="content {{if .Site.Params.enable_anchor_link}}{{ "anchor-link-enabled" }}{{ end }}">
+  {{ $content := .Content }}
+  {{ $content = replaceRE `<a href="(https?://.+)">` `<a href="$1" target="_blank">` $content | safeHTML }}
+  {{ $content = replaceRE `<a href="(mailto:.+)">` `<a href="$1" target="_blank">` $content | safeHTML }}
+  {{ $content | safeHTML }}
+</div>
 </div>

@@ -4,7 +4,7 @@
   <ul>
     {{ range where .Site.RegularPages "Section" .Section }}
     <li class="{{ if eq .File.UniqueID $currentNode.File.UniqueID }}active {{ end }}">
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <a href="#{{ .Title }}">{{ .Title }}</a>
     </li>
     {{ end }}
   </ul>

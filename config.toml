@@ -27,19 +27,24 @@ summaryLength = 30
     weight = 2
 
 [[menu.main]]
+    name = "Tasks"
+    url = "/tasks/"
+    weight = 3
+
+[[menu.main]]
     name = "Submission"
     url = "/submission/"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     name = "Google Group"
     url = "https://groups.google.com/g/scivis2023"
-    weight = 4
+    weight = 5
 
 [[menu.main]]
     name = "Past SciVis Contests"
     url = "/past-submissions/"
-    weight = 5
+    weight = 6
 
 [params]
   google_analytics_id=""
@@ -47,7 +52,7 @@ summaryLength = 30
   homepage_button_text = 'Download the Data'
   homepage_intro = 'This is a test'
   # homepage_image = '/images/terminal.gif'
-  mainSections = ["data", "submission", "past-submissions"]
+  mainSections = ["data", "tasks", "submission", "past-submissions"]
 
   ## You can enable to add anchor links to header elements
   # enable_anchor_link = true

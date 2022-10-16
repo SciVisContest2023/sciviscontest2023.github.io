@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Submission Instruction on IEEE SciVis Contest 2023</title>
+    <title>Submission on IEEE SciVis Contest 2023</title>
     <link>https://sciviscontest2023.github.io/submission/</link>
-    <description>Recent content in Submission Instruction on IEEE SciVis Contest 2023</description>
+    <description>Recent content in Submission on IEEE SciVis Contest 2023</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Nov 2019 15:14:39 +1000</lastBuildDate><atom:link href="https://sciviscontest2023.github.io/submission/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Submission Instruction</title>
+      <link>https://sciviscontest2023.github.io/submission/instruction/</link>
+      <pubDate>Thu, 28 Nov 2019 15:14:39 +1000</pubDate>
+      
+      <guid>https://sciviscontest2023.github.io/submission/instruction/</guid>
+      <description>Your submission should include:
+A 2-page PDF describing your visualization and analysis techniques. Focus on the techniques you used and results you obtained. Do not waste space on background information or data descriptions. Please follow the formatting guidelines for the manuscript.(you can download LaTeX and Word templates from this site). Images which explain how your visualizations help answering the questions. The images should be appended to the 2-page document (thus, your whole PDF document should have more than 2 pages).</description>
+    </item>
+    
+    <item>
+      <title>Important Dates</title>
+      <link>https://sciviscontest2023.github.io/submission/dates/</link>
+      <pubDate>Thu, 28 Nov 2019 15:14:39 +1000</pubDate>
+      
+      <guid>https://sciviscontest2023.github.io/submission/dates/</guid>
+      <description>We will be following the process of the last years.
+There might be slight changes but the plan is this:
+Approximated dates October 20, 2022 Official announcement of the 2023 IEEE SciVis Contest at IEEE Vis 2022. approx. July, 2023 Submission Deadline. approx. September, 2023 Winner notification. approx. October, 2023 Official announcement of the end results at IEEE Vis 2023. </description>
+    </item>
+    
+    <item>
+      <title>Judges</title>
+      <link>https://sciviscontest2023.github.io/submission/judges/</link>
+      <pubDate>Thu, 28 Nov 2019 15:14:39 +1000</pubDate>
+      
+      <guid>https://sciviscontest2023.github.io/submission/judges/</guid>
+      <description>To be announced.</description>
+    </item>
+    
   </channel>
 </rss>

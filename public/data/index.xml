@@ -1,69 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Data Overview on IEEE SciVis Contest 2023</title>
+    <title>Data on IEEE SciVis Contest 2023</title>
     <link>https://sciviscontest2023.github.io/data/</link>
-    <description>Recent content in Data Overview on IEEE SciVis Contest 2023</description>
+    <description>Recent content in Data on IEEE SciVis Contest 2023</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 28 Nov 2018 15:14:39 +1000</lastBuildDate><atom:link href="https://sciviscontest2023.github.io/data/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data Description</title>
-      <link>https://sciviscontest2023.github.io/data/data-description/</link>
+      <link>https://sciviscontest2023.github.io/data/datalocation/</link>
+      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      
+      <guid>https://sciviscontest2023.github.io/data/datalocation/</guid>
+      <description>The simulation produces a number of text files. The data consists of different simulation runs each saved to their own folder.
+As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI thread ID, which can be ignored.
+Each folder has the same setup explained in the following:
+Network Layout The base for the simulation is a neural network represented by point neurons.</description>
+    </item>
+    
+    <item>
+      <title>Download Data</title>
+      <link>https://sciviscontest2023.github.io/data/download/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
       
-      <guid>https://sciviscontest2023.github.io/data/data-description/</guid>
-      <description>Here we provide a tldr description of the data. More information can be found in the subsection.</description>
+      <guid>https://sciviscontest2023.github.io/data/download/</guid>
+      <description>None</description>
     </item>
     
     <item>
-      <title>Data Location</title>
-      <link>https://sciviscontest2023.github.io/data/data-location/</link>
-      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
+      <title>References</title>
+      <link>https://sciviscontest2023.github.io/data/references/</link>
+      <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
       
-      <guid>https://sciviscontest2023.github.io/data/data-location/</guid>
-      <description>&lt;p&gt;Please work on these tasks:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;ol&gt;
-&lt;li&gt;DO this&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Do that&lt;/li&gt;
-&lt;li&gt;Another Task&lt;/li&gt;
-&lt;li&gt;More Tasks&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;We also give out first, second and third place winner and awasrds for:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;best network?&lt;/li&gt;
-&lt;li&gt;best timedependent?&lt;/li&gt;
-&lt;li&gt;best something,,,&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Visualization Tasks</title>
-      <link>https://sciviscontest2023.github.io/data/tasks/</link>
-      <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
-      
-      <guid>https://sciviscontest2023.github.io/data/tasks/</guid>
-      <description>&lt;p&gt;Please work on these tasks:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;ol&gt;
-&lt;li&gt;DO this&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Do that&lt;/li&gt;
-&lt;li&gt;Another Task&lt;/li&gt;
-&lt;li&gt;More Tasks&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;We also give out first, second and third place winner and awasrds for:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;best network?&lt;/li&gt;
-&lt;li&gt;best timedependent?&lt;/li&gt;
-&lt;li&gt;best something,,,&lt;/li&gt;
-&lt;/ul&gt;</description>
+      <guid>https://sciviscontest2023.github.io/data/references/</guid>
+      <description>None</description>
     </item>
     
   </channel>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Data Description - IEEE SciVis Contest 2023</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="icon" href="https://sciviscontest2023.github.io/favicon.png">
+
+  
+  
+  <link rel="stylesheet" href="/css/style.min.f36a15bd5eed319cef27a211f8f8fcdc9385ff6d7d0b24cba4bcb7016a7781c9.css">
+  
+
+  
+
+</head>
+
+<body class='page page-default-single'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="/" >
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-data">
+      <a href="/data/" >
+        <span>Data</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-tasks">
+      <a href="/tasks/" >
+        <span>Tasks</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-submission">
+      <a href="/submission/" >
+        <span>Submission</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-google group">
+      <a href="https://groups.google.com/g/scivis2023"  target="_blank">
+        <span>Google Group</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-past scivis contests">
+      <a href="/past-submissions/" >
+        <span>Past SciVis Contests</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+  <div class="wrapper">
+    <div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="https://sciviscontest2023.github.io/"><img alt="Logo" src="/images/brain.png" /></a>
+    </div>
+    <div class="logo-mobile">
+      <a href="https://sciviscontest2023.github.io/"><img alt="Logo" src="/images/brain.png" /></a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  <ul>
+    
+    
+    <li class="menu-item-home">
+      <a href="/" >
+        <span>Home</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-data">
+      <a href="/data/" >
+        <span>Data</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-tasks">
+      <a href="/tasks/" >
+        <span>Tasks</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-submission">
+      <a href="/submission/" >
+        <span>Submission</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-google group">
+      <a href="https://groups.google.com/g/scivis2023"  target="_blank">
+        <span>Google Group</span>
+      </a>
+    </li>
+    
+    <li class="menu-item-past scivis contests">
+      <a href="/past-submissions/" >
+        <span>Past SciVis Contests</span>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    <div class="container pt-2 pt-md-6 pb-3 pb-md-6">
+      <div class="row">
+        <div class="col-12 col-md-3 mb-3">
+          <div class="sidebar">
+            
+<div class="docs-menu">
+  <h4>Data</h4>
+  <ul>
+    
+    <li class="active ">
+      <a href="#Data%20Description">Data Description</a>
+    </li>
+    
+    <li class="">
+      <a href="#Download%20Data">Download Data</a>
+    </li>
+    
+    <li class="">
+      <a href="#References">References</a>
+    </li>
+    
+  </ul>
+</div>
+
+          </div>
+        </div>
+        <div class="col-12 col-md-9">
+          
+<h1 class="title">Data Description</h1>
+<div class="content ">
+  
+  
+  
+  <p>The simulation produces a number of text files.
+The data consists of different simulation runs each saved to their own folder.</p>
+<p>As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI thread ID, which can be ignored.</p>
+<p>Each folder has the same setup explained in the following:</p>
+<h6 id="network-layout">Network Layout</h6>
+<p>The base for the simulation is a neural network represented by point neurons.
+Each neuron has a unique <strong>ID</strong> that is used throughout the simulation.</p>
+<p>The <strong>3D-position</strong> of each neuron can be found in <code>positions/rank_0_positions.txt</code><br>
+This file further contains <strong>labels</strong> explaining which part of the brain the neuron belongs to as well as the <strong>neuron type</strong>. (Is this type always ex?)</p>
+<p>Ingoing as well as outgoing connections between nodes at the start of the simulation are written in <code>network/rank_0_in_network.txt</code> and <code>network/rank_0_out_network.txt</code> respectively.</p>
+<h6 id="per-node-information">Per Node Information</h6>
+<p>The information about individual nodes is saved to <code>*.csv</code> files.<br>
+Their naming convention is as follow: <code>0_(ID - 1).csv</code>.<br>
+Each <strong>row</strong> within the file contains the per node information at a sampled <strong>simulation step</strong>.</p>
+<p>The following parameters are listed:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Variable</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Step</td>
+<td style="text-align:left">Sampled simulation step</td>
+</tr>
+<tr>
+<td style="text-align:left">Fired</td>
+<td style="text-align:left">Boolean: Did the neuron fire within the last sample step</td>
+</tr>
+<tr>
+<td style="text-align:left">Fired Fraction</td>
+<td style="text-align:left">?</td>
+</tr>
+<tr>
+<td style="text-align:left">x</td>
+<td style="text-align:left">?</td>
+</tr>
+<tr>
+<td style="text-align:left">Secondary Variable</td>
+<td style="text-align:left">?</td>
+</tr>
+<tr>
+<td style="text-align:left">Calcium</td>
+<td style="text-align:left">Current calcium level</td>
+</tr>
+<tr>
+<td style="text-align:left">Target Calcium</td>
+<td style="text-align:left">Target calcium level</td>
+</tr>
+<tr>
+<td style="text-align:left">Synaptic Input</td>
+<td style="text-align:left">Input electrical activity</td>
+</tr>
+<tr>
+<td style="text-align:left">Background Activity</td>
+<td style="text-align:left">?</td>
+</tr>
+<tr>
+<td style="text-align:left">Grown Axons</td>
+<td style="text-align:left">?</td>
+</tr>
+<tr>
+<td style="text-align:left">Connected Axons</td>
+<td style="text-align:left">?</td>
+</tr>
+<tr>
+<td style="text-align:left">Grown Excitatory Dendrites</td>
+<td style="text-align:left">?</td>
+</tr>
+<tr>
+<td style="text-align:left">Connected Excitatory Dendrites</td>
+<td style="text-align:left">?</td>
+</tr>
+<tr>
+<td style="text-align:left">Grown Inhibitory Dendrites</td>
+<td style="text-align:left">?</td>
+</tr>
+<tr>
+<td style="text-align:left">Connected Inhibitory Dendrites</td>
+<td style="text-align:left">?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="matlab-example-for-visualizing-nodes-and-connections">Matlab example for visualizing nodes and connections</h3>
+<p>This is a small hacked example of how to read node positions, incoming connections and calcium value and plot the network in Matlab.</p>
+<p>The code example below should produce the following outcome:
+<img src="" alt="Matlab Plot"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Matlab" data-lang="Matlab"><span class="line"><span class="cl"><span class="c">% Assuming the correct file locations have been set</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">%%% First we read in nodes and their locations</span>
+</span></span><span class="line"><span class="cl"><span class="n">fileID</span> <span class="p">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">positionfilelocation</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">% Read number of nodes:</span>
+</span></span><span class="line"><span class="cl"><span class="n">numOfNodes</span> <span class="p">=</span> <span class="n">fscanf</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="s">&#39;# %d&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">% Read min max values:</span>
+</span></span><span class="line"><span class="cl"><span class="n">minMaxXYZ</span> <span class="p">=</span> <span class="n">fscanf</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="s">&#39;%*s %*s %*s %f&#39;</span><span class="p">,[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">% Read positions, labels and type</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="p">=</span> <span class="n">textscan</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="s">&#39;%*f %f %f %f %s %s&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">% Data containters</span>
+</span></span><span class="line"><span class="cl"><span class="n">positions</span> <span class="p">=</span> <span class="p">[</span><span class="n">data</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span> <span class="n">data</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span> <span class="n">data</span><span class="p">{</span><span class="mi">3</span><span class="p">}];</span>
+</span></span><span class="line"><span class="cl"><span class="n">labels</span> <span class="p">=</span> <span class="p">[</span><span class="n">data</span><span class="p">{</span><span class="mi">4</span><span class="p">}];</span>
+</span></span><span class="line"><span class="cl"><span class="n">type</span> <span class="p">=</span> <span class="p">[</span><span class="n">data</span><span class="p">{</span><span class="mi">5</span><span class="p">}];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">%%% Now let&#39;s read the incoming connections:</span>
+</span></span><span class="line"><span class="cl"><span class="n">fileID</span> <span class="p">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">connectionInfilelocation</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">inconnect</span> <span class="p">=</span> <span class="n">textscan</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="s">&#39;%f %f %f %f %f&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">%%% Read Calcium values:</span>
+</span></span><span class="line"><span class="cl"><span class="n">fileID</span> <span class="p">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">calciumfilelocation</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">str</span> <span class="p">=</span> <span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">iterations</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">calcium</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">numOfNodes</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span><span class="p">(</span><span class="n">str</span> <span class="o">~=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">linedata</span> <span class="p">=</span> <span class="n">strsplit</span><span class="p">(</span><span class="n">str</span><span class="p">,</span><span class="s">&#39;;&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">iterations</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="n">sscanf</span><span class="p">(</span><span class="n">linedata</span><span class="p">{</span><span class="mi">1</span><span class="p">},</span><span class="s">&#39;#%d&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">calcium</span><span class="p">(</span><span class="nb">i</span><span class="p">,:)</span> <span class="p">=</span> <span class="n">str2double</span><span class="p">(</span><span class="n">linedata</span><span class="p">(</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">i</span> <span class="p">=</span> <span class="nb">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">str</span> <span class="p">=</span> <span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="n">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">%%% Plot Nodes and incoming connections</span>
+</span></span><span class="line"><span class="cl"><span class="n">figure</span>
+</span></span><span class="line"><span class="cl"><span class="n">hold</span> <span class="n">on</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">% plot ingoing connections:</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="nb">size</span><span class="p">(</span><span class="n">inconnect</span><span class="p">{</span><span class="mi">1</span><span class="p">},</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">startnodeid</span> <span class="p">=</span> <span class="n">inconnect</span><span class="p">{</span><span class="mi">2</span><span class="p">}(</span><span class="nb">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">endnodeid</span> <span class="p">=</span> <span class="n">inconnect</span><span class="p">{</span><span class="mi">4</span><span class="p">}(</span><span class="nb">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">line</span> <span class="p">=</span> <span class="p">[</span><span class="n">positions</span><span class="p">(</span><span class="n">startnodeid</span><span class="p">,:);</span><span class="n">positions</span><span class="p">(</span><span class="n">endnodeid</span><span class="p">,:)];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">plot3</span><span class="p">(</span><span class="n">line</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">line</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span> <span class="n">line</span><span class="p">(:,</span><span class="mi">3</span><span class="p">),</span><span class="s">&#39;-k&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">% plot neuron locations</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot3</span><span class="p">(</span><span class="n">positions</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">positions</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="n">positions</span><span class="p">(:,</span><span class="mi">3</span><span class="p">),</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p><em><strong>Be warned: due to the number of nodes, plotting might be very slow on some machines.</strong></em></p>
+
+
+<div style="height:  20px"></div>
+
+<hr>
+
+
+<div style="height:  20px"></div>
+
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          <ul>
+            <li style="font-weight: normal;">IEEE SciVis Contest 2023</li>
+            <li>||</li>
+            <li class="zerostatic"><a href="https://www.ieeevis.org" target="_blank">www.ieeevis.org</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/scripts.min.302a6fc365d5139fb98cf60bdb8f715d96257ea189161d36c190ccfa8182e569.js"></script>
+  
+
+  
+  
+  
+    
+  
+
+
+</body>
+
+</html>
