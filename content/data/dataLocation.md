@@ -54,7 +54,7 @@ The following parameters are listed:
 | Grown Inhibitory Dendrites  | ?|
 | Connected Inhibitory Dendrites  | ?|
 
-### Matlab example for visualizing nodes and connections
+###### Matlab example for visualizing nodes and connections
 
 This is a small hacked example of how to read node positions, incoming connections and calcium value and plot the network in Matlab.
 
