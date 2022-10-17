@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>IEEE SciVis Contest 2023</title>
+    <title>2023 IEEE SciVis Contest</title>
     <link>https://sciviscontest2023.github.io/</link>
-    <description>Recent content on IEEE SciVis Contest 2023</description>
+    <description>Recent content on 2023 IEEE SciVis Contest</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 05 Oct 2022 17:32:39 +1000</lastBuildDate><atom:link href="https://sciviscontest2023.github.io/index.xml" rel="self" type="application/rss+xml" />
