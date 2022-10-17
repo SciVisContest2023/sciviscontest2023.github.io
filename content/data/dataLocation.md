@@ -7,6 +7,7 @@ weight: 2
 The data contains:
 - Number of ensemble members
 - Number of neurons
+- number of (sampled) timesteps
 - number of connections
 - calcium information
 - simulation statistics
