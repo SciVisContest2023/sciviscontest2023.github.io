@@ -6,7 +6,7 @@ weight: 5
 summary: None
 ---
 
-The contest is organized by the *Crosssectional Group Visualization* and the *Crosssectional Group Parallel Performance* within the National High Performance Computing Center for Computational Engineering Science (NHR4CES [\[ 5 \]]({{< relref "#References and Acknoledgements" >}})).
+The contest is organized by the *Crosssectional Group Visualization* and the *Crosssectional Group Parallelism and Performance* within the National High Performance Computing Center for Computational Engineering Science (NHR4CES [\[ 5 \]]({{< relref "#References and Acknoledgements" >}})).
 
 [1] Gallinaro, Júlia V. and Gašparović, Nebojša and Rotter, Stefan (2022): Homeostatic control of synaptic rewiring in recurrent networks induces the formation of stable memory engrams - [Available here](http://dx.doi.org/10.1371/journal.pcbi.1009836)  
 [2] Butz, Markus and van Ooyen, Arjen (2013): A simple rule for dendritic spine and axonal bouton formation can account for cortical reorganization after focal retinal lesions - [Available here](https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003259&type=printable)  
