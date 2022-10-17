@@ -1,6 +1,6 @@
 baseURL = 'https://sciviscontest2023.github.io/'
 languageCode = 'en-us'
-title = 'IEEE SciVis Contest 2023'
+title = '2023 IEEE SciVis Contest'
 theme = "hugo-whisper-theme"
 
 pygmentsCodeFences = true
@@ -58,8 +58,8 @@ summaryLength = 30
   # enable_anchor_link = true
 
   [params.homepage_meta_tags]
-    meta_description = "IEEE SciVis Contest 2023"
-    meta_og_title = "IEEE SciVis Contest 2023"
+    meta_description = "2023 IEEE SciVis Contest"
+    meta_og_title = "2023 IEEE SciVis Contest"
     meta_og_type = "website"
     meta_og_url = "https://sciviscontest2023.github.io/"
     meta_og_image = "https://raw.githubusercontent.com/JugglerX/hugo-whisper-theme/master/images/tn.png"
