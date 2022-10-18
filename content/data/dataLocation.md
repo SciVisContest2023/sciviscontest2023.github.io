@@ -16,23 +16,23 @@ The data contains:
 The simulation produces a number of text files.
 The data consists of different simulation runs each saved to their own folder.
   
-As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI thread ID, which can be ignored.
+As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI Rank ID.
 
 Each folder has the same setup explained in the following:
 
 ###### Network Layout
-The base for the simulation is a neural network represented by point neurons.
-Each neuron has a unique **ID** that is used throughout the simulation.
+The base for the simulation is a neuronal network represented by point neurons.
+Each neuron has a **Neuron ID** that is unique to its **MPI Rank ID**. 
+The combination of both is then used throughout the simulation and data.
 
 The **3D-position** of each neuron can be found in `positions/rank_0_positions.txt`  
-This file further contains **labels** explaining which part of the brain the neuron belongs to as well as the **neuron type**. (Is this type always ex?)
+This file further contains **labels** explaining which part of the brain the neuron belongs.
 
 Ingoing as well as outgoing connections between nodes at the start of the simulation are written in `network/rank_0_in_network.txt` and `network/rank_0_out_network.txt` respectively.
 
 ###### Per Node Information
-
 The information about individual nodes is saved to `*.csv` files.  
-Their naming convention is as follow: `0_(ID - 1).csv`.  
+Their naming convention is as follow: `MPI_RANK_ID_(NEURON_ID - 1).csv`.  
 Each **row** within the file contains the per node information at a sampled **simulation step**.  
 
 The following parameters are listed:
@@ -41,19 +41,17 @@ The following parameters are listed:
 | :--   | :-- |
 | Step  | Sampled simulation step|
 | Fired | Boolean: Did the neuron fire within the last sample step |
-| Fired Fraction  | ? |
-| x | ?|
-| Secondary Variable  | ?|
+| Fired Fraction  | In Percent: Number of Firings since the last sampling |
+| x | Electric Activity |
+| Secondary Variable  | Inhibition Variable used for the firing model of Izhikevich |
 | Calcium | Current calcium level|
 | Target Calcium | Target calcium level|
 | Synaptic Input  | Input electrical activity |
-| Background Activity | ?|
-| Grown Axons | ?|
-| Connected Axons | ?|
-| Grown Excitatory Dendrites  | ?|
-| Connected Excitatory Dendrites  | ?|
-| Grown Inhibitory Dendrites  | ?|
-| Connected Inhibitory Dendrites  | ?|
+| Background Activity | Background noise electric activitiy input |
+| Grown Axons | Number of currently grown axonal boutons |
+| Connected Axons | Number of current outgoing connections |
+| Grown Excitatory Dendrites  | Number of currently grown dendrite splines for excitatory connections |
+| Connected Excitatory Dendrites  | Number of ingoing excitatory connections are present |
 
 ###### Matlab example for visualizing nodes and connections
 
@@ -81,13 +79,12 @@ fgetl(fileID);
 fgetl(fileID);
 
 % Read positions, labels and type
-data = textscan(fileID,'%*f %f %f %f %s %s');
+data = textscan(fileID,'%*f %f %f %f %s');
 fclose(fileID);
 
 % Data containters
 positions = [data{1} data{2} data{3}];
 labels = [data{4}];
-type = [data{5}];
 
 %%% Now let's read the incoming connections:
 fileID = fopen(connectionInfilelocation,'r');

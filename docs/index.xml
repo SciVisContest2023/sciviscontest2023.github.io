@@ -36,7 +36,7 @@ Approximated dates October 20, 2022 Official announcement of the 2023 IEEE SciVi
       <guid>https://sciviscontest2023.github.io/data/datalocation/</guid>
       <description>The data contains:
 Number of ensemble members Number of neurons number of (sampled) timesteps number of connections calcium information simulation statistics &amp;hellip; The simulation produces a number of text files. The data consists of different simulation runs each saved to their own folder.
-As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI thread ID, which can be ignored.</description>
+As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI Rank ID.</description>
     </item>
     
     <item>
