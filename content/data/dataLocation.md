@@ -6,7 +6,7 @@ weight: 2
 
 ###### Summary
 This data contains:
-- X GB data
+- ~200 GB data
 - 4 simulation ensemble members
 - 3 out of 4 members consist of 50 000 neurons
 - 1 member consists of 45 000 neurons
@@ -16,12 +16,13 @@ This data contains:
 
 #### In-Detail Description
 
-Four simulations have been run based on the sam underlying human brain data set (Insert name of database here).
-Each simulation produces a number of text files sorted in their correspinding folder:
+Four simulations have been run based on neuron locations given by the same underlying human brain data (MEG 146129) provided within the human connectome database [\[ 6 \]]({{< relref "#References and Acknowledgments" >}}).
+Technical details on the simulation process can be found in [\[ 7 \]]({{< relref "#References and Acknowledgments" >}}) and [\[ 8 \]]({{< relref "#References and Acknowledgments" >}}).
+Each simulation produces several text files sorted in their corresponding folder:
 
 | Simulation | Conditions: |
 | :--   | :-- |
-| 1 | 0-calcium level at start and equal target calcium level for all neurons, no existing connections |
+| 1 | 0-calcium level at the start and equal target calcium level for all neurons, no existing connections |
 | 2 | Lesion Simulation: Same as 1 but with 10% neurons missing. |
 | 3 | Learning Simulation: Same as 1 but with additional learning (electric stimulation) of a specific area |
 | 4 | Different target calcium levels for neurons |
@@ -44,8 +45,8 @@ Ingoing as well as outgoing connections between nodes are written in `network/ra
 
 ###### Per Node Information
 The information about individual nodes is saved to `*.csv` files.  
-Their naming convention is as follow: `(MPI_RANK_ID)_(NEURON_ID - 1).csv`.  
-Each **row** within the file contains the per node information at a sampled **simulation step**.  
+Their naming convention is as follows: `(MPI_RANK_ID)_(NEURON_ID - 1).csv`.  
+Each **row** within the file contains the per-node information at a sampled **simulation step**.  
 
 The following parameters are listed:
 
@@ -59,16 +60,16 @@ The following parameters are listed:
 | Calcium | Current calcium level|
 | Target Calcium | Target calcium level|
 | Synaptic Input  | Input electrical activity |
-| Background Activity | Background noise electric activitiy input |
+| Background Activity | Background noise electric activity input |
 | Grown Axons | Number of currently grown axonal boutons |
 | Connected Axons | Number of current outgoing connections |
 | Grown Excitatory Dendrites  | Number of currently grown dendrite splines for excitatory connections |
-| Connected Excitatory Dendrites  | Number of ingoing excitatory connections are present |
+| Connected Excitatory Dendrites  | Number of incoming excitatory connections |
 |   |   |
 
 ###### Matlab example for visualizing nodes and connections
 
-This is a small hacked example of how to read node positions, incoming connections and calcium value and plot the network in Matlab.
+This is a small hacked example of how to read node positions, incoming connections, and calcium value and plot the network in Matlab.
 
 The code example below should produce the following outcome:
 

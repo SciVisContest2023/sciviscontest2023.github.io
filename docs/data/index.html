@@ -154,7 +154,7 @@
     </li>
     
     <li class="">
-      <a href="#References%20and%20Acknoledgements">References and Acknoledgements</a>
+      <a href="#References%20and%20Acknowledgments">References and Acknowledgments</a>
     </li>
     
   </ul>
@@ -173,25 +173,25 @@
   
   <p>If you want to skip the background for now, go and <a href="#Download Data">download the data</a>
  directly.</p>
-<p>This year&rsquo;s contest deals with the simulation of activity within the human brain, especially the changes within its network structure. Current understanding suggests, that a large amount of connections between neurons via synapses is constantly changing, leading to alteration of brain functionality. This includes positive effects such as the creation of memories <a href="#References and Acknoledgements">[ 1 ]</a>
- or negative ones such as limitations caused by accidents or illnesses <a href="#References and Acknoledgements">[ 2 ]</a>
+<p>This year&rsquo;s contest deals with the simulation of activity within the human brain, especially the changes within its network structure. Current understanding suggests, that a large amount of connections between neurons via synapses is constantly changing, leading to alteration of brain functionality. This includes positive effects such as the creation of memories <a href="#References and Acknowledgments">[ 1 ]</a>
+ or negative ones such as limitations caused by accidents or illnesses <a href="#References and Acknowledgments">[ 2 ]</a>
 .<br>
-To understand these effects on a nueral level, scientists hope to artificially recreate networks that work similar to the human brain with the help of simulation models. The data provided in this contest is based on clinical measurements of actual human brains as well as the <strong>Model of Structural Plasticity</strong> by Butz &amp; Van Ooyen <a href="#References and Acknoledgements">[ 2 ]</a>
+To understand these effects on a neuronal level, scientists hope to artificially recreate networks that work similarly to the human brain with the help of simulation models. The data provided in this contest is based on clinical measurements of actual human brains as well as the <strong>Model of Structural Plasticity</strong> by Butz &amp; Van Ooyen <a href="#References and Acknowledgments">[ 2 ]</a>
  which can be coarsely summarized as follows:</p>
-<p>The brain is modelled by a <strong>network of neurons</strong>.
-Each neuron is either inhibitory or excitatory and is represented by a <strong>node</strong> with a number of properties such as <strong>location</strong>, <strong>calcium concentration</strong>, and <strong>target calcium concentration</strong>.
+<p>The brain is modeled by a <strong>network of neurons</strong>.
+Each neuron is represented by a <strong>node</strong> with a number of properties such as <strong>location</strong>, <strong>calcium concentration</strong>, and <strong>target calcium concentration</strong>.
 It can further carry axonal (&ldquo;plugs&rdquo;) and dendritic (&ldquo;sockets&rdquo;) <strong>elements</strong>.
-If two neurons are spatially close and exhibit unused complementary elements, they have a probability to form a <strong>synapse</strong>, which is represented by a connection in the network through which electric energy can be passed from one neuron to another if it &ldquo;fires&rdquo; based on external input and the Izhikevich model <a href="#References and Acknoledgements">[ 3 ]</a>
+If two neurons are spatially close and exhibit unused complementary elements, they have a probability to form a <strong>synapse</strong>, which is represented by a connection in the network through which electric energy can be passed from one neuron to another if it &ldquo;fires&rdquo; based on external input and the Izhikevich model <a href="#References and Acknowledgments">[ 3 ]</a>
 .
 When a neuron fires, its calcium level increases only to decrease again over time.
-In this model, neurons aim to reach a certain target calcium concentration based on its current calcium level. To achieve this, it either seeks to increase or decrease the level of incoming electrical activity resulting in the <strong>addition</strong> or <strong>removal</strong> of elements, which, in turn, leads to the formation, rewiring or deletion of synapses.<br>
+In this model, neurons aim to reach a certain target calcium concentration based on their current calcium level. To achieve this, it either seeks to increase or decrease the level of incoming electrical activity resulting in the <strong>addition</strong> or <strong>removal</strong> of elements, which, in turn, leads to the formation, rewiring, or deletion of synapses.<br>
 Thus, in each simulation step, each neuron calculates its energy income and calcium level based on this model, followed by the addition or deletion of elements, leading to changes in the network structure. This can be repeated until the system has reached a stable configuration or stopped on demand.</p>
 <p>The following animation shows a simple visualization of the neurons represented as spheres at the appropriate locations and colored by their current calcium level:</p>
 <p><img src="/spheres.webp" alt="Animated Brain"></p>
 <p>On the <a href="/">front page</a>
  you can also see a visualization containing line renderings of ingoing connections (synapses).</p>
-<p>Visualization can help to understand theses processes (see, e.g., <a href="#References and Acknoledgements">[ 4 ]</a>
-). Therefore, the goal of this contest is to enable domain scientists as well as simulation scientists to better evaluate their models, , and explore the simulation results. 
+<p>Visualization can help to understand these processes (see, e.g., <a href="#References and Acknowledgments">[ 4 ]</a>
+). Therefore, the goal of this contest is to enable domain scientists as well as simulation scientists to better evaluate their models, compare, and explore the simulation results. 
 Based on this, we have provided a list of visualization <a href="%5ctasks">tasks</a>
  for this contest.</p>
 
@@ -214,31 +214,68 @@ Based on this, we have provided a list of visualization <a href="%5ctasks">tasks
   
   
   
-  <p>The data contains:</p>
+  <h6 id="summary">Summary</h6>
+<p>This data contains:</p>
 <ul>
-<li>Number of ensemble members</li>
-<li>Number of neurons</li>
-<li>number of (sampled) timesteps</li>
-<li>number of connections</li>
-<li>calcium information</li>
-<li>simulation statistics</li>
-<li>&hellip;</li>
+<li>~200 GB data</li>
+<li>4 simulation ensemble members</li>
+<li>3 out of 4 members consist of 50 000 neurons</li>
+<li>1 member consists of 45 000 neurons</li>
+<li>Each node collects information about 12 parameters</li>
+<li>The simulations have different simulation durations</li>
+<li>Every 100th iteration step is sampled</li>
 </ul>
-<p>The simulation produces a number of text files.
-The data consists of different simulation runs each saved to their own folder.</p>
+<h4 id="in-detail-description">In-Detail Description</h4>
+<p>Four simulations have been run based on neuron locations given by the same underlying human brain data (MEG 146129) provided within the human connectome database <a href="#References and Acknowledgments">[ 6 ]</a>
+.
+Technical details on the simulation process can be found in <a href="#References and Acknowledgments">[ 7 ]</a>
+ and <a href="#References and Acknowledgments">[ 8 ]</a>
+.
+Each simulation produces several text files sorted in their corresponding folder:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Simulation</th>
+<th style="text-align:left">Conditions:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0-calcium level at the start and equal target calcium level for all neurons, no existing connections</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">Lesion Simulation: Same as 1 but with 10% neurons missing.</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">Learning Simulation: Same as 1 but with additional learning (electric stimulation) of a specific area</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">Different target calcium levels for neurons</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
 <p>As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI Rank ID.</p>
 <p>Each folder has the same setup explained in the following:</p>
 <h6 id="network-layout">Network Layout</h6>
 <p>The base for the simulation is a neuronal network represented by point neurons.
 Each neuron has a <strong>Neuron ID</strong> that is unique to its <strong>MPI Rank ID</strong>. 
 The combination of both is then used throughout the simulation and data.</p>
-<p>The <strong>3D-position</strong> of each neuron can be found in <code>positions/rank_0_positions.txt</code><br>
+<p>The <strong>3D-position</strong> of each neuron can be found in <code>positions/rank_0_positions.txt</code>.<br>
+These are fixed and do not change.
 This file further contains <strong>labels</strong> explaining which part of the brain the neuron belongs.</p>
-<p>Ingoing as well as outgoing connections between nodes at the start of the simulation are written in <code>network/rank_0_in_network.txt</code> and <code>network/rank_0_out_network.txt</code> respectively.</p>
+<p>Ingoing as well as outgoing connections between nodes are written in <code>network/rank_0_in_network.txt</code> and <code>network/rank_0_out_network.txt</code> respectively.</p>
 <h6 id="per-node-information">Per Node Information</h6>
 <p>The information about individual nodes is saved to <code>*.csv</code> files.<br>
-Their naming convention is as follow: <code>MPI_RANK_ID_(NEURON_ID - 1).csv</code>.<br>
-Each <strong>row</strong> within the file contains the per node information at a sampled <strong>simulation step</strong>.</p>
+Their naming convention is as follows: <code>(MPI_RANK_ID)_(NEURON_ID - 1).csv</code>.<br>
+Each <strong>row</strong> within the file contains the per-node information at a sampled <strong>simulation step</strong>.</p>
 <p>The following parameters are listed:</p>
 <table>
 <thead>
@@ -282,7 +319,7 @@ Each <strong>row</strong> within the file contains the per node information at a
 </tr>
 <tr>
 <td style="text-align:left">Background Activity</td>
-<td style="text-align:left">Background noise electric activitiy input</td>
+<td style="text-align:left">Background noise electric activity input</td>
 </tr>
 <tr>
 <td style="text-align:left">Grown Axons</td>
@@ -298,12 +335,16 @@ Each <strong>row</strong> within the file contains the per node information at a
 </tr>
 <tr>
 <td style="text-align:left">Connected Excitatory Dendrites</td>
-<td style="text-align:left">Number of ingoing excitatory connections are present</td>
+<td style="text-align:left">Number of incoming excitatory connections</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
 <h6 id="matlab-example-for-visualizing-nodes-and-connections">Matlab example for visualizing nodes and connections</h6>
-<p>This is a small hacked example of how to read node positions, incoming connections and calcium value and plot the network in Matlab.</p>
+<p>This is a small hacked example of how to read node positions, incoming connections, and calcium value and plot the network in Matlab.</p>
 <p>The code example below should produce the following outcome:</p>
 
 
@@ -389,8 +430,10 @@ Each <strong>row</strong> within the file contains the per node information at a
   
   
   
-  <p>Links will be added within the next days.</p>
-<p>If you use this data set in your publications, please acknowledge with the following: tba</p>
+  <p>Links to download the data will be added within the next days.</p>
+<p>If you use this data set in your publications, please acknowledge with the following work:
+Czappa, Fabian and Geiß, Alexander and Wolf, Felix (2022): Simulating Structural Plasticity of the Brain more Scalable than Expected <a href="#References and Acknowledgments">[ 7 ].</a>
+</p>
 
 
 <div style="height:  20px"></div>
@@ -407,22 +450,27 @@ Each <strong>row</strong> within the file contains the per node information at a
 
 <div class="summary mb-2">
   
-  <h2 id="References and Acknoledgements">References and Acknoledgements</h2>
+  <h2 id="References and Acknowledgments">References and Acknowledgments</h2>
   <div class="content ">
   
   
   
-  <p>The contest is organized by the <em>Crosssectional Group Visualization</em> and the <em>Crosssectional Group Parallelism and Performance</em> within the National High Performance Computing Center for Computational Engineering Science (NHR4CES <a href="#References and Acknoledgements">[ 5 ]</a>
+  <p>The contest is organized by the <em>Crosssectional Group Visualization</em> and the <em>Crosssectional Group Parallelism and Performance</em> within the National High Performance Computing Center for Computational Engineering Science (NHR4CES <a href="#References and Acknowledgments">[ 5 ]</a>
 ).</p>
-<p>[1] Gallinaro, Júlia V. and Gašparović, Nebojša and Rotter, Stefan (2022): Homeostatic control of synaptic rewiring in recurrent networks induces the formation of stable memory engrams - <a href="http://dx.doi.org/10.1371/journal.pcbi.1009836" target="_blank" target="_blank">Available here</a>
+<p>[1] Gallinaro, Júlia V. and Gašparović, Nebojša and Rotter, Stefan (2022): <em>Homeostatic control of synaptic rewiring in recurrent networks induces the formation of stable memory engrams</em> - <a href="http://dx.doi.org/10.1371/journal.pcbi.1009836" target="_blank" target="_blank">Available here</a>
 <br>
-[2] Butz, Markus and van Ooyen, Arjen (2013): A simple rule for dendritic spine and axonal bouton formation can account for cortical reorganization after focal retinal lesions - <a href="https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003259&amp;type=printable" target="_blank" target="_blank">Available here</a>
+[2] Butz, Markus and van Ooyen, Arjen (2013): <em>A simple rule for dendritic spine and axonal bouton formation can account for cortical reorganization after focal retinal lesions</em> - <a href="https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1003259&amp;type=printable" target="_blank" target="_blank">Available here</a>
 <br>
-[3] Izhikevich, Eugene M. (2003): Simple model of spiking neurons - <a href="https://www.izhikevich.org/publications/spikes.pdf" target="_blank" target="_blank">Available here</a>
+[3] Izhikevich, Eugene M. (2003): <em>Simple model of spiking neurons</em> - <a href="https://www.izhikevich.org/publications/spikes.pdf" target="_blank" target="_blank">Available here</a>
 <br>
-[4] Nowke, Christian, Sandra Diaz-Pier, Benjamin Weyers, Bernd Hentschel, Abigail Morrison, Torsten W. Kuhlen, and Alexander Peyser (2018): Toward rigorous parameterization of underconstrained neural network models through interactive visualization and steering of connectivity generation <a href="https://www.frontiersin.org/articles/10.3389/fninf.2018.00032/full" target="_blank" target="_blank">Available here</a>
+[4] Nowke, Christian and Diaz-Pier, Sandra and Weyers, Benjamin and Hentschel, Bernd and Morrison, Abigail and Kuhlen, Torsten W. and Peyser, Alexander (2018): <em>Toward rigorous parameterization of underconstrained neural network models through interactive visualization and steering of connectivity generation</em> <a href="https://www.frontiersin.org/articles/10.3389/fninf.2018.00032/full" target="_blank" target="_blank">Available here</a>
 <br>
-[5] National High Performance Computing Center for Computational Engineering Science (NHR4CES) - <a href="https://www.nhr4ces.de/" target="_blank" target="_blank">Website</a>
+[5] <em>National High Performance Computing Center for Computational Engineering Science</em> (NHR4CES) - <a href="https://www.nhr4ces.de/" target="_blank" target="_blank">Website</a>
+<br>
+[6]<br>
+[7] Czappa, Fabian and Geiß, Alexander and Wolf, Felix (2022): <em>Simulating Structural Plasticity of the Brain more Scalable than Expected</em> - <a href="https://arxiv.org/pdf/2210.05267.pdf" target="_blank" target="_blank">Available here</a>
+
+[8] Rinke, Sebastian and Butz-Ostendorf, Markus and Hermanns, Marc-André and Naveau, Mikael and Wolf, Felix. (2018): <em>A scalable algorithm for simulating the structural plasticity of the brain</em> - <a href="https://www.sciencedirect.com/science/article/abs/pii/S0743731517303313" target="_blank" target="_blank">Available here</a>
 </p>
 
 </div>

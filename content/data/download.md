@@ -6,10 +6,10 @@ weight: 3
 summary: None  
 ---
 
-Links will be added within the next days.
+Links to download the data will be added within the next days.
 
 If you use this data set in your publications, please acknowledge with the following work:
-Czappa, Fabian, Alexander Geiß, and Felix Wolf (2022): Simulating Structural Plasticity of the Brain more Scalable than Expected. 
+Czappa, Fabian and Geiß, Alexander and Wolf, Felix (2022): Simulating Structural Plasticity of the Brain more Scalable than Expected [\[ 7 \].]({{< relref "#References and Acknowledgments" >}})
 
 
 {{< rawhtml >}}

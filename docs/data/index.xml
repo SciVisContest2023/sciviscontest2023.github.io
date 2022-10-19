@@ -13,9 +13,8 @@
       <pubDate>Mon, 11 Feb 2019 19:27:37 +1000</pubDate>
       
       <guid>https://sciviscontest2023.github.io/data/datalocation/</guid>
-      <description>The data contains:
-Number of ensemble members Number of neurons number of (sampled) timesteps number of connections calcium information simulation statistics &amp;hellip; The simulation produces a number of text files. The data consists of different simulation runs each saved to their own folder.
-As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI Rank ID.</description>
+      <description>Summary This data contains:
+~200 GB data 4 simulation ensemble members 3 out of 4 members consist of 50 000 neurons 1 member consists of 45 000 neurons Each node collects information about 12 parameters The simulations have different simulation durations Every 100th iteration step is sampled In-Detail Description Four simulations have been run based on neuron locations given by the same underlying human brain data (MEG 146129) provided within the human connectome database [ 6 ].</description>
     </item>
     
     <item>
@@ -28,7 +27,7 @@ As the simulation can be efficiently run on a cluster of computing nodes, MPI in
     </item>
     
     <item>
-      <title>References and Acknoledgements</title>
+      <title>References and Acknowledgments</title>
       <link>https://sciviscontest2023.github.io/data/references/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
       

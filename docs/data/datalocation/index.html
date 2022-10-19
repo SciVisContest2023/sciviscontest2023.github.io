@@ -154,7 +154,7 @@
     </li>
     
     <li class="">
-      <a href="#References%20and%20Acknoledgements">References and Acknoledgements</a>
+      <a href="#References%20and%20Acknowledgments">References and Acknowledgments</a>
     </li>
     
   </ul>
@@ -169,31 +169,68 @@
   
   
   
-  <p>The data contains:</p>
+  <h6 id="summary">Summary</h6>
+<p>This data contains:</p>
 <ul>
-<li>Number of ensemble members</li>
-<li>Number of neurons</li>
-<li>number of (sampled) timesteps</li>
-<li>number of connections</li>
-<li>calcium information</li>
-<li>simulation statistics</li>
-<li>&hellip;</li>
+<li>~200 GB data</li>
+<li>4 simulation ensemble members</li>
+<li>3 out of 4 members consist of 50 000 neurons</li>
+<li>1 member consists of 45 000 neurons</li>
+<li>Each node collects information about 12 parameters</li>
+<li>The simulations have different simulation durations</li>
+<li>Every 100th iteration step is sampled</li>
 </ul>
-<p>The simulation produces a number of text files.
-The data consists of different simulation runs each saved to their own folder.</p>
+<h4 id="in-detail-description">In-Detail Description</h4>
+<p>Four simulations have been run based on neuron locations given by the same underlying human brain data (MEG 146129) provided within the human connectome database <a href="#References and Acknowledgments">[ 6 ]</a>
+.
+Technical details on the simulation process can be found in <a href="#References and Acknowledgments">[ 7 ]</a>
+ and <a href="#References and Acknowledgments">[ 8 ]</a>
+.
+Each simulation produces several text files sorted in their corresponding folder:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Simulation</th>
+<th style="text-align:left">Conditions:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0-calcium level at the start and equal target calcium level for all neurons, no existing connections</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">Lesion Simulation: Same as 1 but with 10% neurons missing.</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">Learning Simulation: Same as 1 but with additional learning (electric stimulation) of a specific area</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">Different target calcium levels for neurons</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
 <p>As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI Rank ID.</p>
 <p>Each folder has the same setup explained in the following:</p>
 <h6 id="network-layout">Network Layout</h6>
 <p>The base for the simulation is a neuronal network represented by point neurons.
 Each neuron has a <strong>Neuron ID</strong> that is unique to its <strong>MPI Rank ID</strong>. 
 The combination of both is then used throughout the simulation and data.</p>
-<p>The <strong>3D-position</strong> of each neuron can be found in <code>positions/rank_0_positions.txt</code><br>
+<p>The <strong>3D-position</strong> of each neuron can be found in <code>positions/rank_0_positions.txt</code>.<br>
+These are fixed and do not change.
 This file further contains <strong>labels</strong> explaining which part of the brain the neuron belongs.</p>
-<p>Ingoing as well as outgoing connections between nodes at the start of the simulation are written in <code>network/rank_0_in_network.txt</code> and <code>network/rank_0_out_network.txt</code> respectively.</p>
+<p>Ingoing as well as outgoing connections between nodes are written in <code>network/rank_0_in_network.txt</code> and <code>network/rank_0_out_network.txt</code> respectively.</p>
 <h6 id="per-node-information">Per Node Information</h6>
 <p>The information about individual nodes is saved to <code>*.csv</code> files.<br>
-Their naming convention is as follow: <code>MPI_RANK_ID_(NEURON_ID - 1).csv</code>.<br>
-Each <strong>row</strong> within the file contains the per node information at a sampled <strong>simulation step</strong>.</p>
+Their naming convention is as follows: <code>(MPI_RANK_ID)_(NEURON_ID - 1).csv</code>.<br>
+Each <strong>row</strong> within the file contains the per-node information at a sampled <strong>simulation step</strong>.</p>
 <p>The following parameters are listed:</p>
 <table>
 <thead>
@@ -237,7 +274,7 @@ Each <strong>row</strong> within the file contains the per node information at a
 </tr>
 <tr>
 <td style="text-align:left">Background Activity</td>
-<td style="text-align:left">Background noise electric activitiy input</td>
+<td style="text-align:left">Background noise electric activity input</td>
 </tr>
 <tr>
 <td style="text-align:left">Grown Axons</td>
@@ -253,12 +290,16 @@ Each <strong>row</strong> within the file contains the per node information at a
 </tr>
 <tr>
 <td style="text-align:left">Connected Excitatory Dendrites</td>
-<td style="text-align:left">Number of ingoing excitatory connections are present</td>
+<td style="text-align:left">Number of incoming excitatory connections</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
 <h6 id="matlab-example-for-visualizing-nodes-and-connections">Matlab example for visualizing nodes and connections</h6>
-<p>This is a small hacked example of how to read node positions, incoming connections and calcium value and plot the network in Matlab.</p>
+<p>This is a small hacked example of how to read node positions, incoming connections, and calcium value and plot the network in Matlab.</p>
 <p>The code example below should produce the following outcome:</p>
 
 

@@ -35,7 +35,7 @@ Approximated dates October 20, 2022 Official announcement of the 2023 IEEE SciVi
       
       <guid>https://sciviscontest2023.github.io/data/datalocation/</guid>
       <description>Summary This data contains:
-X GB data 4 simulation ensemble members 3 out of 4 members consist of 50 000 neurons 1 member consists of 45 000 neurons Each node collects information about 12 parameters The simulations have different simulation durations Every 100th iteration step is sampled In-Detail Description Four simulations have been run based on the sam underlying human brain data set (Insert name of database here). Each simulation produces a number of text files sorted in their correspinding folder:</description>
+~200 GB data 4 simulation ensemble members 3 out of 4 members consist of 50 000 neurons 1 member consists of 45 000 neurons Each node collects information about 12 parameters The simulations have different simulation durations Every 100th iteration step is sampled In-Detail Description Four simulations have been run based on neuron locations given by the same underlying human brain data (MEG 146129) provided within the human connectome database [ 6 ].</description>
     </item>
     
     <item>
@@ -57,7 +57,7 @@ X GB data 4 simulation ensemble members 3 out of 4 members consist of 50 000 neu
     </item>
     
     <item>
-      <title>References and Acknoledgements</title>
+      <title>References and Acknowledgments</title>
       <link>https://sciviscontest2023.github.io/data/references/</link>
       <pubDate>Mon, 11 Feb 2019 19:30:08 +1000</pubDate>
       
