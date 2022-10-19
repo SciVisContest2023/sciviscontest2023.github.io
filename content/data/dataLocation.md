@@ -4,17 +4,28 @@ date: 2019-02-11T19:27:37+10:00
 weight: 2
 ---
 
-The data contains:
-- Number of ensemble members
-- Number of neurons
-- number of (sampled) timesteps
-- number of connections
-- calcium information
-- simulation statistics
-- ...
+###### Summary
+This data contains:
+- X GB data
+- 4 simulation ensemble members
+- 3 out of 4 members consist of 50 000 neurons
+- 1 member consists of 45 000 neurons
+- Each node collects information about 12 parameters
+- The simulations have different simulation durations
+- Every 100th iteration step is sampled
 
-The simulation produces a number of text files.
-The data consists of different simulation runs each saved to their own folder.
+#### In-Detail Description
+
+Four simulations have been run based on the sam underlying human brain data set (Insert name of database here).
+Each simulation produces a number of text files sorted in their correspinding folder:
+
+| Simulation | Conditions: |
+| :--   | :-- |
+| 1 | 0-calcium level at start and equal target calcium level for all neurons, no existing connections |
+| 2 | Lesion Simulation: Same as 1 but with 10% neurons missing. |
+| 3 | Learning Simulation: Same as 1 but with additional learning (electric stimulation) of a specific area |
+| 4 | Different target calcium levels for neurons |
+|   |   |
   
 As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI Rank ID.
 
@@ -25,14 +36,15 @@ The base for the simulation is a neuronal network represented by point neurons.
 Each neuron has a **Neuron ID** that is unique to its **MPI Rank ID**. 
 The combination of both is then used throughout the simulation and data.
 
-The **3D-position** of each neuron can be found in `positions/rank_0_positions.txt`  
+The **3D-position** of each neuron can be found in `positions/rank_0_positions.txt`.  
+These are fixed and do not change.
 This file further contains **labels** explaining which part of the brain the neuron belongs.
 
-Ingoing as well as outgoing connections between nodes at the start of the simulation are written in `network/rank_0_in_network.txt` and `network/rank_0_out_network.txt` respectively.
+Ingoing as well as outgoing connections between nodes are written in `network/rank_0_in_network.txt` and `network/rank_0_out_network.txt` respectively.
 
 ###### Per Node Information
 The information about individual nodes is saved to `*.csv` files.  
-Their naming convention is as follow: `MPI_RANK_ID_(NEURON_ID - 1).csv`.  
+Their naming convention is as follow: `(MPI_RANK_ID)_(NEURON_ID - 1).csv`.  
 Each **row** within the file contains the per node information at a sampled **simulation step**.  
 
 The following parameters are listed:
@@ -52,6 +64,7 @@ The following parameters are listed:
 | Connected Axons | Number of current outgoing connections |
 | Grown Excitatory Dendrites  | Number of currently grown dendrite splines for excitatory connections |
 | Connected Excitatory Dendrites  | Number of ingoing excitatory connections are present |
+|   |   |
 
 ###### Matlab example for visualizing nodes and connections
 

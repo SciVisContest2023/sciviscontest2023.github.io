@@ -179,7 +179,7 @@
 To understand these effects on a nueral level, scientists hope to artificially recreate networks that work similar to the human brain with the help of simulation models. The data provided in this contest is based on clinical measurements of actual human brains as well as the <strong>Model of Structural Plasticity</strong> by Butz &amp; Van Ooyen <a href="#References and Acknoledgements">[ 2 ]</a>
  which can be coarsely summarized as follows:</p>
 <p>The brain is modelled by a <strong>network of neurons</strong>.
-Each neuron is either inhibitory or excitatory and is represented by a <strong>node</strong> with a number of properties such as <strong>location</strong>, <strong>calcium concentration</strong>, and <strong>target calcium concentration</strong>.
+Each neuron is represented by a <strong>node</strong> with a number of properties such as <strong>location</strong>, <strong>calcium concentration</strong>, and <strong>target calcium concentration</strong>.
 It can further carry axonal (&ldquo;plugs&rdquo;) and dendritic (&ldquo;sockets&rdquo;) <strong>elements</strong>.
 If two neurons are spatially close and exhibit unused complementary elements, they have a probability to form a <strong>synapse</strong>, which is represented by a connection in the network through which electric energy can be passed from one neuron to another if it &ldquo;fires&rdquo; based on external input and the Izhikevich model <a href="#References and Acknoledgements">[ 3 ]</a>
 .
@@ -191,7 +191,7 @@ Thus, in each simulation step, each neuron calculates its energy income and calc
 <p>On the <a href="/">front page</a>
  you can also see a visualization containing line renderings of ingoing connections (synapses).</p>
 <p>Visualization can help to understand theses processes (see, e.g., <a href="#References and Acknoledgements">[ 4 ]</a>
-). Therefore, the goal of this contest is to enable domain scientists as well as simulation scientists to better evaluate their models, , and explore the simulation results. 
+). Therefore, the goal of this contest is to enable domain scientists as well as simulation scientists to better evaluate their models, compare, and explore the simulation results. 
 Based on this, we have provided a list of visualization <a href="%5ctasks">tasks</a>
  for this contest.</p>
 
@@ -214,30 +214,63 @@ Based on this, we have provided a list of visualization <a href="%5ctasks">tasks
   
   
   
-  <p>The data contains:</p>
+  <h6 id="summary">Summary</h6>
+<p>This data contains:</p>
 <ul>
-<li>Number of ensemble members</li>
-<li>Number of neurons</li>
-<li>number of (sampled) timesteps</li>
-<li>number of connections</li>
-<li>calcium information</li>
-<li>simulation statistics</li>
-<li>&hellip;</li>
+<li>X GB data</li>
+<li>4 simulation ensemble members</li>
+<li>3 out of 4 members consist of 50 000 neurons</li>
+<li>1 member consists of 45 000 neurons</li>
+<li>Each node collects information about 12 parameters</li>
+<li>The simulations have different simulation durations</li>
+<li>Every 100th iteration step is sampled</li>
 </ul>
-<p>The simulation produces a number of text files.
-The data consists of different simulation runs each saved to their own folder.</p>
+<h4 id="in-detail-description">In-Detail Description</h4>
+<p>Four simulations have been run based on the sam underlying human brain data set (Insert name of database here).
+Each simulation produces a number of text files sorted in their correspinding folder:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Simulation</th>
+<th style="text-align:left">Conditions:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0-calcium level at start and equal target calcium level for all neurons, no existing connections</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">Lesion Simulation: Same as 1 but with 10% neurons missing.</td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:left">Learning Simulation: Same as 1 but with additional learning (electric stimulation) of a specific area</td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:left">Different target calcium levels for neurons</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
 <p>As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI Rank ID.</p>
 <p>Each folder has the same setup explained in the following:</p>
 <h6 id="network-layout">Network Layout</h6>
 <p>The base for the simulation is a neuronal network represented by point neurons.
 Each neuron has a <strong>Neuron ID</strong> that is unique to its <strong>MPI Rank ID</strong>. 
 The combination of both is then used throughout the simulation and data.</p>
-<p>The <strong>3D-position</strong> of each neuron can be found in <code>positions/rank_0_positions.txt</code><br>
+<p>The <strong>3D-position</strong> of each neuron can be found in <code>positions/rank_0_positions.txt</code>.<br>
+These are fixed and do not change.
 This file further contains <strong>labels</strong> explaining which part of the brain the neuron belongs.</p>
-<p>Ingoing as well as outgoing connections between nodes at the start of the simulation are written in <code>network/rank_0_in_network.txt</code> and <code>network/rank_0_out_network.txt</code> respectively.</p>
+<p>Ingoing as well as outgoing connections between nodes are written in <code>network/rank_0_in_network.txt</code> and <code>network/rank_0_out_network.txt</code> respectively.</p>
 <h6 id="per-node-information">Per Node Information</h6>
 <p>The information about individual nodes is saved to <code>*.csv</code> files.<br>
-Their naming convention is as follow: <code>MPI_RANK_ID_(NEURON_ID - 1).csv</code>.<br>
+Their naming convention is as follow: <code>(MPI_RANK_ID)_(NEURON_ID - 1).csv</code>.<br>
 Each <strong>row</strong> within the file contains the per node information at a sampled <strong>simulation step</strong>.</p>
 <p>The following parameters are listed:</p>
 <table>
@@ -299,6 +332,10 @@ Each <strong>row</strong> within the file contains the per node information at a
 <tr>
 <td style="text-align:left">Connected Excitatory Dendrites</td>
 <td style="text-align:left">Number of ingoing excitatory connections are present</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
 </tr>
 </tbody>
 </table>
@@ -390,7 +427,8 @@ Each <strong>row</strong> within the file contains the per node information at a
   
   
   <p>Links will be added within the next days.</p>
-<p>If you use this data set in your publications, please acknowledge with the following: tba</p>
+<p>If you use this data set in your publications, please acknowledge with the following work:
+Czappa, Fabian, Alexander Geiß, and Felix Wolf (2022): Simulating Structural Plasticity of the Brain more Scalable than Expected.</p>
 
 
 <div style="height:  20px"></div>

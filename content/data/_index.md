@@ -10,7 +10,7 @@ This year's contest deals with the simulation of activity within the human brain
 To understand these effects on a nueral level, scientists hope to artificially recreate networks that work similar to the human brain with the help of simulation models. The data provided in this contest is based on clinical measurements of actual human brains as well as the **Model of Structural Plasticity** by Butz & Van Ooyen [\[ 2 \]]({{< relref "#References and Acknoledgements" >}}) which can be coarsely summarized as follows:  
 
 The brain is modelled by a **network of neurons**.
-Each neuron is either inhibitory or excitatory and is represented by a **node** with a number of properties such as **location**, **calcium concentration**, and **target calcium concentration**.
+Each neuron is represented by a **node** with a number of properties such as **location**, **calcium concentration**, and **target calcium concentration**.
 It can further carry axonal ("plugs") and dendritic ("sockets") **elements**.
 If two neurons are spatially close and exhibit unused complementary elements, they have a probability to form a **synapse**, which is represented by a connection in the network through which electric energy can be passed from one neuron to another if it "fires" based on external input and the Izhikevich model [\[ 3 \]]({{< relref "#References and Acknoledgements" >}}).
 When a neuron fires, its calcium level increases only to decrease again over time.
@@ -23,7 +23,7 @@ The following animation shows a simple visualization of the neurons represented 
 
 On the [front page](/) you can also see a visualization containing line renderings of ingoing connections (synapses).
 
-Visualization can help to understand theses processes (see, e.g., [\[ 4 \]]({{< relref "#References and Acknoledgements" >}})). Therefore, the goal of this contest is to enable domain scientists as well as simulation scientists to better evaluate their models, , and explore the simulation results. 
+Visualization can help to understand theses processes (see, e.g., [\[ 4 \]]({{< relref "#References and Acknoledgements" >}})). Therefore, the goal of this contest is to enable domain scientists as well as simulation scientists to better evaluate their models, compare, and explore the simulation results. 
 Based on this, we have provided a list of visualization [tasks](\tasks) for this contest.
 
 
