@@ -8,11 +8,10 @@ weight: 2
 This data contains:
 - ~200 GB data
 - 4 simulation ensemble members
-- 3 out of 4 members consist of 50 000 neurons
-- 1 member consists of 45 000 neurons
+- Each members consists of 50 000 neurons
 - Each node collects information about 12 parameters
 - The simulations have different simulation durations
-- Every 100th iteration step is sampled
+- Every 100th iteration step is sampled per node
 
 #### In-Detail Description
 
@@ -23,7 +22,7 @@ Each simulation produces several text files sorted in their corresponding folder
 | Simulation | Conditions: |
 | :--   | :-- |
 | 1 | 0-calcium level at the start and equal target calcium level for all neurons, no existing connections |
-| 2 | Lesion Simulation: Same as 1 but with 10% neurons missing. |
+| 2 | Lesion Simulation: Same as 1 but with 10% neurons inactive (dead). |
 | 3 | Learning Simulation: Same as 1 but with additional learning (electric stimulation) of a specific area |
 | 4 | Different target calcium levels for neurons |
 |   |   |

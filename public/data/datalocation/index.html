@@ -174,11 +174,10 @@
 <ul>
 <li>~200 GB data</li>
 <li>4 simulation ensemble members</li>
-<li>3 out of 4 members consist of 50 000 neurons</li>
-<li>1 member consists of 45 000 neurons</li>
+<li>Each members consists of 50 000 neurons</li>
 <li>Each node collects information about 12 parameters</li>
 <li>The simulations have different simulation durations</li>
-<li>Every 100th iteration step is sampled</li>
+<li>Every 100th iteration step is sampled per node</li>
 </ul>
 <h4 id="in-detail-description">In-Detail Description</h4>
 <p>Four simulations have been run based on neuron locations given by the same underlying human brain data (MEG 146129) provided within the human connectome database <a href="#References and Acknowledgments">[ 6 ]</a>
@@ -201,7 +200,7 @@ Each simulation produces several text files sorted in their corresponding folder
 </tr>
 <tr>
 <td style="text-align:left">2</td>
-<td style="text-align:left">Lesion Simulation: Same as 1 but with 10% neurons missing.</td>
+<td style="text-align:left">Lesion Simulation: Same as 1 but with 10% neurons inactive (dead).</td>
 </tr>
 <tr>
 <td style="text-align:left">3</td>
