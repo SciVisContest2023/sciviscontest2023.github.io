@@ -182,7 +182,7 @@
 </ul>
 <h4 id="in-detail-description">In-Detail Description</h4>
 <p>Four simulations have been run based on neuron locations given by the same underlying human brain data (MEG 146129) provided within the human connectome database <a href="#References and Acknowledgments">[ 6 ]</a>
-.
+ and extended by additional neurons.
 Technical details on the simulation process can be found in <a href="#References and Acknowledgments">[ 7 ]</a>
  and <a href="#References and Acknowledgments">[ 8 ]</a>
 .
@@ -226,10 +226,10 @@ The combination of both is then used throughout the simulation and data.</p>
 <p>The <strong>3D-position</strong> of each neuron can be found in <code>positions/rank_0_positions.txt</code>.<br>
 These are fixed and do not change.
 This file further contains <strong>labels</strong> explaining which part of the brain the neuron belongs.</p>
-<p>Ingoing as well as outgoing connections between nodes are written in <code>network/rank_0_in_network.txt</code> and <code>network/rank_0_out_network.txt</code> respectively.</p>
+<p>Ingoing as well as outgoing connections between nodes are sampled at different simulation steps and written in <code>network/&lt;MPI_RANK_ID&gt;_step_&lt;STEP&gt;_in_network.txt</code> and <code>network/&lt;MPI_RANK_ID&gt;_step_&lt;STEP&gt;_out_network.txt</code> respectively.</p>
 <h6 id="per-node-information">Per Node Information</h6>
 <p>The information about individual nodes is saved to <code>*.csv</code> files.<br>
-Their naming convention is as follows: <code>(MPI_RANK_ID)_(NEURON_ID - 1).csv</code>.<br>
+Their naming convention is as follows: <code>&lt;MPI_RANK_ID&gt;_&lt;NEURON_ID - 1&gt;.csv</code>.<br>
 Each <strong>row</strong> within the file contains the per-node information at a sampled <strong>simulation step</strong>.</p>
 <p>The following parameters are listed:</p>
 <table>
@@ -286,7 +286,7 @@ Each <strong>row</strong> within the file contains the per-node information at a
 </tr>
 <tr>
 <td style="text-align:left">Grown Excitatory Dendrites</td>
-<td style="text-align:left">Number of currently grown dendrite splines for excitatory connections</td>
+<td style="text-align:left">Number of currently grown dendrite spines for excitatory connections</td>
 </tr>
 <tr>
 <td style="text-align:left">Connected Excitatory Dendrites</td>

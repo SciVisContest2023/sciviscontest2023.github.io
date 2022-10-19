@@ -16,7 +16,7 @@ This data contains:
 
 #### In-Detail Description
 
-Four simulations have been run based on neuron locations given by the same underlying human brain data (MEG 146129) provided within the human connectome database [\[ 6 \]]({{< relref "#References and Acknowledgments" >}}).
+Four simulations have been run based on neuron locations given by the same underlying human brain data (MEG 146129) provided within the human connectome database [\[ 6 \]]({{< relref "#References and Acknowledgments" >}}) and extended by additional neurons.
 Technical details on the simulation process can be found in [\[ 7 \]]({{< relref "#References and Acknowledgments" >}}) and [\[ 8 \]]({{< relref "#References and Acknowledgments" >}}).
 Each simulation produces several text files sorted in their corresponding folder:
 
@@ -41,11 +41,11 @@ The **3D-position** of each neuron can be found in `positions/rank_0_positions.t
 These are fixed and do not change.
 This file further contains **labels** explaining which part of the brain the neuron belongs.
 
-Ingoing as well as outgoing connections between nodes are written in `network/rank_0_in_network.txt` and `network/rank_0_out_network.txt` respectively.
+Ingoing as well as outgoing connections between nodes are sampled at different simulation steps and written in `network/<MPI_RANK_ID>_step_<STEP>_in_network.txt` and `network/<MPI_RANK_ID>_step_<STEP>_out_network.txt` respectively.
 
 ###### Per Node Information
 The information about individual nodes is saved to `*.csv` files.  
-Their naming convention is as follows: `(MPI_RANK_ID)_(NEURON_ID - 1).csv`.  
+Their naming convention is as follows: `<MPI_RANK_ID>_<NEURON_ID - 1>.csv`.  
 Each **row** within the file contains the per-node information at a sampled **simulation step**.  
 
 The following parameters are listed:
@@ -63,7 +63,7 @@ The following parameters are listed:
 | Background Activity | Background noise electric activity input |
 | Grown Axons | Number of currently grown axonal boutons |
 | Connected Axons | Number of current outgoing connections |
-| Grown Excitatory Dendrites  | Number of currently grown dendrite splines for excitatory connections |
+| Grown Excitatory Dendrites  | Number of currently grown dendrite spines for excitatory connections |
 | Connected Excitatory Dendrites  | Number of incoming excitatory connections |
 |   |   |
 

@@ -8,8 +8,13 @@ summary: None
 
 Links to download the data will be added within the next days.
 
-If you use this data set in your publications, please acknowledge with the following work:
-Czappa, Fabian and Geiß, Alexander and Wolf, Felix (2022): Simulating Structural Plasticity of the Brain more Scalable than Expected [\[ 7 \].]({{< relref "#References and Acknowledgments" >}})
+If you use this data set in your publications, please acknowledge the following:
+
+Neuron positions based on:  
+Marcus DS, Harwell J, Olsen T, Hodge M, Glasser MF, Prior F, Jenkinson M, Laumann T, Curtiss SW, and Van Essen DC. (2011). *Informatics and data mining: Tools and strategies for the Human Connectome Project.* Frontiers in Neuroinformatics 5:4.  
+
+Simulation based on:  
+Rinke, Sebastian and Butz-Ostendorf, Markus and Hermanns, Marc-André and Naveau, Mikael and Wolf, Felix. (2018): *A scalable algorithm for simulating the structural plasticity of the brain* [\[ 8 \].]({{< relref "#References and Acknowledgments" >}})
 
 
 {{< rawhtml >}}
