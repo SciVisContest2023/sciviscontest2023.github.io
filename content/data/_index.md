@@ -17,11 +17,12 @@ When a neuron fires, its calcium level increases only to decrease again over tim
 In this model, neurons aim to reach a certain target calcium concentration based on their current calcium level. To achieve this, it either seeks to increase or decrease the level of incoming electrical activity resulting in the **addition** or **removal** of elements, which, in turn, leads to the formation, rewiring, or deletion of synapses.  
 Thus, in each simulation step, each neuron calculates its energy income and calcium level based on this model, followed by the addition or deletion of elements, leading to changes in the network structure. This can be repeated until the system has reached a stable configuration or stopped on demand.  
 
-The following animation shows a simple visualization of the neurons represented as spheres at the appropriate locations and colored by their current calcium level:
+The following animation shows a simple visualization of a similar dataset:
+The neurons are represented as spheres at the appropriate locations and colored by their current calcium level.
 
 ![Animated Brain](/spheres.webp)
 
-On the [front page](/) you can also see a visualization containing line renderings of ingoing connections (synapses).
+On the [front page](/) you can also see a visualization containing line renderings of ingoing connections (synapses) of the same dataset.
 
 Visualization can help to understand these processes (see, e.g., [\[ 4 \]]({{< relref "#References and Acknowledgments" >}})). Therefore, the goal of this contest is to enable domain scientists as well as simulation scientists to better evaluate their models, compare, and explore the simulation results. 
 Based on this, we have provided a list of visualization [tasks](\tasks) for this contest.

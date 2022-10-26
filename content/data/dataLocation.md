@@ -6,26 +6,30 @@ weight: 2
 
 ###### Summary
 This data contains:
-- ~200 GB data
+- ~50 GB data
 - 4 simulation ensemble members
 - Each members consists of 50 000 neurons
 - Each node collects information about 12 parameters
-- The simulations have different simulation durations
+- The simulation is run for 1,000,000 simulations steps
 - Every 100th iteration step is sampled per node
+
+Please find more details in the `readme.md`.
 
 #### In-Detail Description
 
-Four simulations have been run based on neuron locations given by the same underlying human brain data (MEG 146129) provided within the human connectome database [\[ 6 \]]({{< relref "#References and Acknowledgments" >}}) and extended by additional neurons.
+Four simulations have been run based on neuron locations given by the same underlying human brain data (MEG 146129) provided within the human connectome database [\[ 6 \]]({{< relref "#References and Acknowledgments" >}}) and extended by additional neurons close to existing ones. In the future, we plan on using more accurate models but these are not yet open for free use.
 Technical details on the simulation process can be found in [\[ 7 \]]({{< relref "#References and Acknowledgments" >}}) and [\[ 8 \]]({{< relref "#References and Acknowledgments" >}}).
 Each simulation produces several text files sorted in their corresponding folder:
 
-| Simulation | Conditions: |
-| :--   | :-- |
-| 1 | 0-calcium level at the start and equal target calcium level for all neurons, no existing connections |
-| 2 | Lesion Simulation: Same as 1 but with 10% neurons inactive (dead). |
-| 3 | Learning Simulation: Same as 1 but with additional learning (electric stimulation) of a specific area |
-| 4 | Different target calcium levels for neurons |
+| Simulation | Conditions: | Folder Name |
+| :--   | :-- | :-- |
+| 1 | 0-calcium level at the start and equal target calcium level for all neurons, no existing connections | no-network |
+| 2 | Lesion Simulation: Take the connection result of 1 and simulate with 10% neurons inactive (dead). | disable |
+| 3 | Learning Simulation: Take the connection result of 1 and simulate learning (electric stimulation) of a specific area | stimulus |
+| 4 | Take the connection result of 1 and use different target calcium levels for neurons | calcium |
 |   |   |
+
+Some of the simulations have additional files, e.g., `calcium_targets.txt`,`disable.txt`, and `stimulus.txt` that include simulation specific information.  
   
 As the simulation can be efficiently run on a cluster of computing nodes, MPI information is included within the files and names by a leading MPI Rank ID.
 
@@ -38,12 +42,13 @@ The combination of both is then used throughout the simulation and data.
 
 The **3D-position** of each neuron can be found in `positions/rank_0_positions.txt`.  
 These are fixed and do not change.
-This file further contains **labels** explaining which part of the brain the neuron belongs.
+This file further contains **labels** explaining which part of the brain the neuron belongs to.
+*Note: These areas are set manually and are not based on medical accurate regions within the human brain.* 
 
 Ingoing as well as outgoing connections between nodes are sampled at different simulation steps and written in `network/<MPI_RANK_ID>_step_<STEP>_in_network.txt` and `network/<MPI_RANK_ID>_step_<STEP>_out_network.txt` respectively.
 
 ###### Per Node Information
-The information about individual nodes is saved to `*.csv` files.  
+The information about individual nodes is saved to `*.csv` files within `monitors.zip`.  
 Their naming convention is as follows: `<MPI_RANK_ID>_<NEURON_ID - 1>.csv`.  
 Each **row** within the file contains the per-node information at a sampled **simulation step**.  
 
@@ -53,9 +58,9 @@ The following parameters are listed:
 | :--   | :-- |
 | Step  | Sampled simulation step|
 | Fired | Boolean: Did the neuron fire within the last sample step |
-| Fired Fraction  | In Percent: Number of Firings since the last sampling |
+| Fired Fraction  | In Percent: Number of firings since the last sampling |
 | x | Electric Activity |
-| Secondary Variable  | Inhibition Variable used for the firing model of Izhikevich |
+| Secondary Variable  | Inhibition variable used for the firing model of Izhikevich |
 | Calcium | Current calcium level|
 | Target Calcium | Target calcium level|
 | Synaptic Input  | Input electrical activity |
@@ -66,6 +71,19 @@ The following parameters are listed:
 | Connected Excitatory Dendrites  | Number of incoming excitatory connections |
 |   |   |
 
+###### Simulation Information
+
+Each simulation run also saves some statistics:
+
+| File Name | Description |
+| :--   | :-- |
+| `neurons_overview.txt`  | Statistical summary sampled simulation steps |
+| `plasticity_changes.txt`  | Summary of creation and deletions of connections |
+| `stdcout.txt`  | Program output |
+| `timers.txt`  | Timings |
+| | |
+
+
 ###### Matlab example for visualizing nodes and connections
 
 This is a small hacked example of how to read node positions, incoming connections, and calcium value and plot the network in Matlab.
@@ -73,7 +91,7 @@ This is a small hacked example of how to read node positions, incoming connectio
 The code example below should produce the following outcome:
 
 {{< rawhtml >}}
-<img src="/matlab.png" alt="Matlab Plot" class="matlab">
+<img src="/matlab2.png" alt="Matlab Plot" class="matlab">
 {{< /rawhtml >}}
 
 ```Matlab
@@ -101,7 +119,7 @@ labels = [data{4}];
 
 %%% Now let's read the incoming connections:
 fileID = fopen(connectionInfilelocation,'r');
-fgetl(fileID);fgetl(fileID);fgetl(fileID);fgetl(fileID);
+fgetl(fileID);fgetl(fileID);fgetl(fileID);fgetl(fileID);fgetl(fileID);
 inconnect = textscan(fileID,'%f %f %f %f %f');
 fclose(fileID);
 
@@ -124,6 +142,8 @@ fclose(fileID);
 %%% Plot Nodes and incoming connections
 figure
 hold on
+axis vis3d
+view(60,8)
 
 % plot ingoing connections:
 for i=1:size(inconnect{1},1)

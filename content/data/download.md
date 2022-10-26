@@ -6,7 +6,15 @@ weight: 3
 summary: None  
 ---
 
-Links to download the data will be added within the next days.
+We provide a number of options to download the data.
+Some services might be slower/faster then others.
+
+| Provider | Link |
+| :--   | :-- |
+| RWTH Coscine  | to be added |
+| Sciebo  | https://rwth-aachen.sciebo.de/s/KNTo1vgT0JZyGJx |
+| Gigamove (valid until 9.11.2022)  | https://gigamove.rwth-aachen.de/de/download/1cdbacfe835f13c19f29bb3724e74255 |
+| | |
 
 If you use this data set in your publications, please acknowledge the following:
 
