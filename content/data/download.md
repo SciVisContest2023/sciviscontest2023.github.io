@@ -11,9 +11,8 @@ Some services might be slower/faster then others.
 
 | Provider | Link |
 | :--   | :-- |
-| RWTH Coscine  | to be added |
 | Sciebo  | https://rwth-aachen.sciebo.de/s/KNTo1vgT0JZyGJx |
-| Gigamove (valid until 9.11.2022)  | https://gigamove.rwth-aachen.de/de/download/1cdbacfe835f13c19f29bb3724e74255 |
+| Gigamove (valid until 21.11.2022)  | https://gigamove.rwth-aachen.de/de/download/ae621c338a695ee4ce0ff4da7c058925 |
 | | |
 
 If you use this data set in your publications, please acknowledge the following:
