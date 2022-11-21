@@ -12,7 +12,7 @@ Some services might be slower/faster then others.
 | Provider | Link |
 | :--   | :-- |
 | Sciebo  | https://rwth-aachen.sciebo.de/s/KNTo1vgT0JZyGJx |
-| Gigamove (valid until 21.11.2022)  | https://gigamove.rwth-aachen.de/de/download/ae621c338a695ee4ce0ff4da7c058925 |
+| Gigamove | https://gigamove.rwth-aachen.de/de/download/ae621c338a695ee4ce0ff4da7c058925 |
 | | |
 
 If you use this data set in your publications, please acknowledge the following:
