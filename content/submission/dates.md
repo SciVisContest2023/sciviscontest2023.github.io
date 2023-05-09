@@ -7,10 +7,10 @@ weight: 2
 We will be following the process of the last years.  
 There might be slight changes but the plan is this:
 
-| Approximated dates
+| Dates
 | :---        |    :---   |
 | **October 20, 2022** |  Official announcement of the 2023 IEEE SciVis Contest at IEEE Vis 2022.  |
-| approx. July, 2023 |  Submission Deadline.  |
+| **July 31, 2023** |  Submission Deadline.  |
 | approx. September, 2023 |  Winner notification.  |
 | approx. October, 2023 | Official announcement of the end results at IEEE Vis 2023. |  
 

@@ -14,9 +14,8 @@ To submit:
 1. Go to https://new.precisionconference.com
 2. Sign in or create a new account
 3. Go to the *Submissions* tab at the top 
-4. Under *Make a new submission to* select *VGTC* as Society, *VIS 2023* as Conference/Journal, and *VIS 2023 SciVis Contest* as Track, similar to the data in the screenshot:  
+4. Under *Make a new submission to* select *VGTC* as Society, *VIS 2023* as Conference/Journal, and *VIS 2023 SciVis Contest* as Track, as shown in this screenshot:  
 ![Submission Selection](/submit.png)
-The correct dates will be added in the future.
 5. Edit the submission with your data and record the changes  
 
 
