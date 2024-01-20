@@ -9,15 +9,15 @@ Neuronal Network Simulations of the Human Brain
 
 Welcome to the *2023 IEEE SciVis Contest* website.
 This contest is held annually as part of the [IEEE VIS Conference.](http://ieeevis.org)  
-In 2023, the conference and this contest will be held in Melbourne, Australia, and will focus on the visualization of  
+In 2023, the conference and this contest was held in Melbourne, Australia, and focused on the visualization of  
  ***neuronal network simulations of plasticity changes in the human brain***.
 
 On this website, you can find information on the provided [data,](/data) the visualization [tasks,](/tasks) as well as the [submission process.](/submission)  
-If there still are questions, feel free to contact the [contest chairs](mailto:scivis_contest@ieeevis.org) or join the [Google Group.](https://groups.google.com/g/scivis2023).
+If there still are questions, feel free to contact the [contest chairs](mailto:scivis_contest@ieeevis.org) or join the [Google Group.](https://groups.google.com/g/scivis2023). The contest session took place at the IEEE VIS conference on:
+Monday, October 23, 2023, 2:00PM-5:00PM AEDT (UTC+11), in Room 111-112.
 
-The contest session will take place at the IEEE VIS conference on:
-
-**Monday, October 23, 2023, 2:00PM-5:00PM AEDT (UTC+11), in Room 111-112**.
+**The 2024 contest can be found here:
+[https://sciviscontest2024.github.io](https://sciviscontest2024.github.io/)**
 
 ###### Watch a video from IEEE VIS 2022 presenting the data and tasks:
 

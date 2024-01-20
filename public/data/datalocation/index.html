@@ -357,10 +357,9 @@ Each <strong>row</strong> within the file contains the per-node information at a
 <p>The code example below should produce the following outcome:</p>
 
 
-<img src="/matlab2.png" alt="Matlab Plot" class="matlab">
+<img src="/brain_light.png" alt="Matlab Plot" class="matlab">
 
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Matlab" data-lang="Matlab"><span class="line"><span class="cl"><span class="c">% Assuming the correct file locations have been set</span>
-</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">%%% First we read in nodes and their locations</span>
 </span></span><span class="line"><span class="cl"><span class="n">fileID</span> <span class="p">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">positionfilelocation</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
@@ -381,7 +380,7 @@ Each <strong>row</strong> within the file contains the per-node information at a
 </span></span><span class="line"><span class="cl"><span class="n">positions</span> <span class="p">=</span> <span class="p">[</span><span class="n">data</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span> <span class="n">data</span><span class="p">{</span><span class="mi">2</span><span class="p">}</span> <span class="n">data</span><span class="p">{</span><span class="mi">3</span><span class="p">}];</span>
 </span></span><span class="line"><span class="cl"><span class="n">labels</span> <span class="p">=</span> <span class="p">[</span><span class="n">data</span><span class="p">{</span><span class="mi">4</span><span class="p">}];</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">%%% Now let&#39;s read the incoming connections:</span>
+</span></span><span class="line"><span class="cl"><span class="c">%%% Now read the incoming connections:</span>
 </span></span><span class="line"><span class="cl"><span class="n">fileID</span> <span class="p">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">connectionInfilelocation</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="n">fgetl</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="n">inconnect</span> <span class="p">=</span> <span class="n">textscan</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="s">&#39;%f %f %f %f %f&#39;</span><span class="p">);</span>
@@ -404,21 +403,26 @@ Each <strong>row</strong> within the file contains the per-node information at a
 </span></span><span class="line"><span class="cl"><span class="n">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">%%% Plot Nodes and incoming connections</span>
-</span></span><span class="line"><span class="cl"><span class="n">figure</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span> <span class="p">=</span> <span class="n">figure</span>
 </span></span><span class="line"><span class="cl"><span class="n">hold</span> <span class="n">on</span>
 </span></span><span class="line"><span class="cl"><span class="n">axis</span> <span class="n">vis3d</span>
+</span></span><span class="line"><span class="cl"><span class="c">% optional: set(f,&#39;renderer&#39;,&#39;opengl&#39;);</span>
 </span></span><span class="line"><span class="cl"><span class="n">view</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">% plot ingoing connections:</span>
+</span></span><span class="line"><span class="cl"><span class="n">xx</span> <span class="p">=</span> <span class="p">[];</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="nb">size</span><span class="p">(</span><span class="n">inconnect</span><span class="p">{</span><span class="mi">1</span><span class="p">},</span><span class="mi">1</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="n">startnodeid</span> <span class="p">=</span> <span class="n">inconnect</span><span class="p">{</span><span class="mi">2</span><span class="p">}(</span><span class="nb">i</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">endnodeid</span> <span class="p">=</span> <span class="n">inconnect</span><span class="p">{</span><span class="mi">4</span><span class="p">}(</span><span class="nb">i</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">line</span> <span class="p">=</span> <span class="p">[</span><span class="n">positions</span><span class="p">(</span><span class="n">startnodeid</span><span class="p">,:);</span><span class="n">positions</span><span class="p">(</span><span class="n">endnodeid</span><span class="p">,:)];</span>
-</span></span><span class="line"><span class="cl">    <span class="n">plot3</span><span class="p">(</span><span class="n">line</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">line</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span> <span class="n">line</span><span class="p">(:,</span><span class="mi">3</span><span class="p">),</span><span class="s">&#39;-k&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">xx</span><span class="p">(((</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">:((</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="p">,:)</span> <span class="p">=</span> <span class="p">[[</span><span class="n">line</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span><span class="n">NaN</span><span class="p">],[</span><span class="n">line</span><span class="p">(:,</span><span class="mi">2</span><span class="p">);</span><span class="n">NaN</span><span class="p">],[</span><span class="n">line</span><span class="p">(:,</span><span class="mi">3</span><span class="p">);</span><span class="n">NaN</span><span class="p">]];</span>
 </span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="n">h</span> <span class="p">=</span> <span class="n">plot3</span><span class="p">(</span><span class="n">xx</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">xx</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="n">xx</span><span class="p">(:,</span><span class="mi">3</span><span class="p">),</span><span class="s">&#39;-k&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">h</span><span class="p">.</span><span class="n">Color</span><span class="p">(</span><span class="mi">4</span><span class="p">)=</span> <span class="mf">0.01</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c">% plot neuron locations</span>
-</span></span><span class="line"><span class="cl"><span class="n">plot3</span><span class="p">(</span><span class="n">positions</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">positions</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="n">positions</span><span class="p">(:,</span><span class="mi">3</span><span class="p">),</span><span class="s">&#39;.&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">plot3</span><span class="p">(</span><span class="n">positions</span><span class="p">(:,</span><span class="mi">1</span><span class="p">),</span><span class="n">positions</span><span class="p">(:,</span><span class="mi">2</span><span class="p">),</span><span class="n">positions</span><span class="p">(:,</span><span class="mi">3</span><span class="p">),</span><span class="s">&#39;.&#39;</span><span class="p">,</span><span class="s">&#39;Color&#39;</span><span class="p">,</span> &#34;#<span class="mi">80</span><span class="n">B3FF</span>&#34;<span class="p">)</span>
 </span></span></code></pre></div><p><em><strong>Be warned: due to the number of nodes, plotting might be very slow on some machines.</strong></em></p>
 
 

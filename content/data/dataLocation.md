@@ -91,12 +91,11 @@ This is a small hacked example of how to read node positions, incoming connectio
 The code example below should produce the following outcome:
 
 {{< rawhtml >}}
-<img src="/matlab2.png" alt="Matlab Plot" class="matlab">
+<img src="/brain_light.png" alt="Matlab Plot" class="matlab">
 {{< /rawhtml >}}
 
 ```Matlab
 % Assuming the correct file locations have been set
-
 %%% First we read in nodes and their locations
 fileID = fopen(positionfilelocation,'r');
 
@@ -117,7 +116,7 @@ fclose(fileID);
 positions = [data{1} data{2} data{3}];
 labels = [data{4}];
 
-%%% Now let's read the incoming connections:
+%%% Now read the incoming connections:
 fileID = fopen(connectionInfilelocation,'r');
 fgetl(fileID);fgetl(fileID);fgetl(fileID);fgetl(fileID);fgetl(fileID);
 inconnect = textscan(fileID,'%f %f %f %f %f');
@@ -140,21 +139,26 @@ end
 fclose(fileID);
 
 %%% Plot Nodes and incoming connections
-figure
+f = figure
 hold on
 axis vis3d
+% optional: set(f,'renderer','opengl');
 view(60,8)
 
 % plot ingoing connections:
+xx = [];
 for i=1:size(inconnect{1},1)
     startnodeid = inconnect{2}(i);
     endnodeid = inconnect{4}(i);
     line = [positions(startnodeid,:);positions(endnodeid,:)];
-    plot3(line(:,1),line(:,2), line(:,3),'-k')
+
+    xx(((i-1)*3)+1:((i-1)*3)+3,:) = [[line(:,1);NaN],[line(:,2);NaN],[line(:,3);NaN]];
 end
+h = plot3(xx(:,1),xx(:,2),xx(:,3),'-k');
+h.Color(4)= 0.01;
 
 % plot neuron locations
-plot3(positions(:,1),positions(:,2),positions(:,3),'.')
+plot3(positions(:,1),positions(:,2),positions(:,3),'.','Color', "#80B3FF")
 ```
 ***Be warned: due to the number of nodes, plotting might be very slow on some machines.***
 
